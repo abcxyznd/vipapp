@@ -1,5 +1,131 @@
 [
   {
+    "id": "ipa-com.fujixweekly.fujixweeklyrecipes-1.12.0",
+    "type": "ipa",
+    "name": "FujiXWeekly",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/com.fujixweekly.fujixweeklyrecipes.png",
+    "desc": "Injected with Pro",
+    "tags": [
+      "Social"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/14-12-2025/FujiXWeekly_1.12.0_Pro_%40thisismanpreets_apptesters.org.ipa",
+    "version": "1.12.0",
+    "developer": "khomodvip",
+    "date": "2025-12-14",
+    "source": "apptesters",
+    "bundleID": "com.fujixweekly.fujixweeklyrecipes",
+    "lastSync": "2025-12-14T07:58:00.460Z"
+  },
+  {
+    "id": "ipa-com.agiletortoise.Drafts5-49.0",
+    "type": "ipa",
+    "name": "Drafts",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/com.agiletortoise.Drafts5.png",
+    "desc": "Injected with Subscription Unlocked",
+    "tags": [
+      "Utility"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/14-12-2025/Drafts_49.0_Subscription_Unlocked_%40thisismanpreets_apptesters.org.ipa",
+    "version": "49.0",
+    "developer": "khomodvip",
+    "date": "2025-12-14",
+    "source": "apptesters",
+    "bundleID": "com.agiletortoise.Drafts5",
+    "lastSync": "2025-12-14T07:58:00.460Z"
+  },
+  {
+    "id": "ipa-com.puzzle1studio.ap.brickoutshoottheball-25.1212.00",
+    "type": "ipa",
+    "name": "BrickOut",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/com.puzzle1studio.ap.brickoutshoottheball.png",
+    "desc": "Injected with IGG",
+    "tags": [
+      "Utility"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/14-12-2025/BrickOut_25.1212.00_IGG_%40thisismanpreets_apptesters.org.ipa",
+    "version": "25.1212.00",
+    "developer": "khomodvip",
+    "date": "2025-12-14",
+    "source": "apptesters",
+    "bundleID": "com.puzzle1studio.ap.brickoutshoottheball",
+    "lastSync": "2025-12-14T07:58:00.460Z"
+  },
+  {
+    "id": "ipa-com.alphaprogression.alphaprogression-6.3",
+    "type": "ipa",
+    "name": "AlphaProgr",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/com.alphaprogression.alphaprogression.png",
+    "desc": "Injected with Pro",
+    "tags": [
+      "Utility"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/14-12-2025/AlphaProgr_6.3_Pro_%40thisismanpreets_apptesters.org.ipa",
+    "version": "6.3",
+    "developer": "khomodvip",
+    "date": "2025-12-14",
+    "source": "apptesters",
+    "bundleID": "com.alphaprogression.alphaprogression",
+    "lastSync": "2025-12-14T07:58:00.460Z"
+  },
+  {
+    "id": "ipa-com.atebits.Tweetie2-11.48",
+    "type": "ipa",
+    "name": "X",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/com.atebits.Tweetie2.png",
+    "desc": "Injected with Premium",
+    "tags": [
+      "Social"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/14-12-2025/X_11.48_Premium_%40thisismanpreets_apptesters.org.ipa",
+    "version": "11.48",
+    "developer": "khomodvip",
+    "date": "2025-12-14",
+    "source": "apptesters",
+    "bundleID": "com.atebits.Tweetie2",
+    "lastSync": "2025-12-14T07:58:00.460Z"
+  },
+  {
+    "id": "ipa-com.letterboxd.LetterboxdApp-4.8.4",
+    "type": "ipa",
+    "name": "Letterboxd",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/com.letterboxd.LetterboxdApp.png",
+    "desc": "Injected with Pro",
+    "tags": [
+      "Social"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/14-12-2025/Letterboxd_4.8.4_Pro_%40thisismanpreets_apptesters.org.ipa",
+    "version": "4.8.4",
+    "developer": "khomodvip",
+    "date": "2025-12-14",
+    "source": "apptesters",
+    "bundleID": "com.letterboxd.LetterboxdApp",
+    "lastSync": "2025-12-14T07:58:00.461Z"
+  },
+  {
+    "id": "ipa-com.locket.Locket-2.25.0",
+    "type": "ipa",
+    "name": "Locket",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/com.locket.Locket.png",
+    "desc": "Injected with Gold",
+    "tags": [
+      "Utility"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/14-12-2025/Locket_2.25.0_Gold_%40thisismanpreets_apptesters.org.ipa",
+    "version": "2.25.0",
+    "developer": "khomodvip",
+    "date": "2025-12-14",
+    "source": "apptesters",
+    "bundleID": "com.locket.Locket",
+    "lastSync": "2025-12-14T07:58:00.461Z"
+  },
+  {
     "id": "ipa-com.lyftaios-1.127",
     "type": "ipa",
     "name": "Lyfta",
