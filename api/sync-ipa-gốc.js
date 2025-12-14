@@ -1,4 +1,4 @@
-// api/sync-ipa.js - GIỮ TẤT CẢ PHIÊN BẢN KHÁC NHAU
+// api/sync-ipa.js - BẢO MẬT URL + AUTO TAG V2
 
 export default async function handler(req, res) {
   // CRITICAL: CORS headers
@@ -36,18 +36,23 @@ export default async function handler(req, res) {
 
     console.log('✅ Auth passed');
 
+    // 🔒 CONFIGURATION: Sử dụng Environment Variables
     const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
-    const GITHUB_OWNER = process.env.GITHUB_OWNER || 'abcxyznd';
-    const GITHUB_REPO = process.env.GITHUB_REPO || 'vipapp';
+    const GITHUB_OWNER = process.env.GITHUB_OWNER || 'Cuongqtx11';
+    const GITHUB_REPO = process.env.GITHUB_REPO || 'app_vip';
+    const APPTESTER_URL = process.env.APPTESTER_URL;
     const FILE_PATH = 'public/data/ipa.json';
-    const APPTESTER_URL = 'https://repository.apptesters.org/';
 
+    // Kiểm tra biến môi trường bắt buộc
     if (!GITHUB_TOKEN) {
-      return res.status(500).json({ error: 'GitHub token not configured' });
+      return res.status(500).json({ error: 'Server Error: GITHUB_TOKEN not configured' });
+    }
+    if (!APPTESTER_URL) {
+      return res.status(500).json({ error: 'Server Error: APPTESTER_URL not configured' });
     }
 
-    // 1. Fetch từ AppTesters
-    console.log('📦 Fetching from AppTesters...');
+    // 1. Fetch từ AppTesters (URL lấy từ Env)
+    console.log('📦 Fetching from Source...');
     const response = await fetch(APPTESTER_URL, {
       headers: {
         'User-Agent': 'Mozilla/5.0',
@@ -56,7 +61,7 @@ export default async function handler(req, res) {
     });
     
     if (!response.ok) {
-      throw new Error(`API returned ${response.status}`);
+      throw new Error(`Source API returned ${response.status}`);
     }
     
     const jsonData = await response.json();
@@ -141,7 +146,7 @@ export default async function handler(req, res) {
           name: app.name,
           icon: app.iconURL || app.icon,
           desc: app.localizedDescription || 'Injected with Premium',
-          tags: smartDetectTags(app),
+          tags: smartDetectTags(app), // V2 Logic
           badge: smartDetectBadge(app),
           fileLink: app.downloadURL || app.down,
           version: app.version,
@@ -187,10 +192,9 @@ export default async function handler(req, res) {
     });
 
     // 6. 🔄 MERGE: GIỮ TẤT CẢ + THÊM MỚI
-    // Bước 1: Lấy tất cả apps cũ (trừ những cái bị skip vì trùng)
     const allAutoApps = [...existingAutoApps, ...newApps];
     
-    // Bước 2: Loại bỏ duplicates (chỉ xóa những cái trùng hoàn toàn)
+    // Loại bỏ trùng lặp nếu có (dựa trên key)
     const uniqueApps = [];
     const seenKeys = new Set();
     
@@ -202,39 +206,29 @@ export default async function handler(req, res) {
       }
     });
     
-    // Bước 3: Sort theo date (mới nhất lên đầu)
+    // Sắp xếp: Mới nhất lên đầu
     uniqueApps.sort((a, b) => {
       const dateA = new Date(a.date || a.lastSync || 0);
       const dateB = new Date(b.date || b.lastSync || 0);
       return dateB - dateA;
     });
 
-    // Manual apps sort
     manualApps.sort((a, b) => {
       const dateA = new Date(a.date || 0);
       const dateB = new Date(b.date || 0);
       return dateB - dateA;
     });
 
-    // Final merge
     const mergedData = [...uniqueApps, ...manualApps, ...otherApps];
 
-    console.log(`📊 Summary:
-  - New apps/versions: ${newApps.length}
-  - Kept old versions: ${keptOldVersions.length}
-  - Skipped (exact duplicates): ${skippedApps.length}
-  - Total auto apps: ${uniqueApps.length}
-  - Manual apps: ${manualApps.length}
-  - TOTAL: ${mergedData.length}`);
-
-    // 7. Upload to GitHub (chỉ khi có thay đổi)
+    // 7. Upload to GitHub
     if (newApps.length > 0) {
       console.log('📤 Uploading...');
       
       const newContent = Buffer.from(JSON.stringify(mergedData, null, 2)).toString('base64');
       
       const updatePayload = {
-        message: `Sync: +${newApps.length} new (kept all versions)`,
+        message: `Sync: +${newApps.length} new (kept all versions) - Auto Tag V2`,
         content: newContent,
         branch: 'main'
       };
@@ -292,53 +286,92 @@ export default async function handler(req, res) {
   }
 }
 
-// ==================== HELPER FUNCTIONS ====================
+// ==================== HELPER FUNCTIONS (NÂNG CẤP V2 - LOGIC TÊN APP) ====================
 
 function smartDetectTags(app) {
-  const tags = [];
   const name = (app.name || '').toLowerCase();
-  const desc = (app.localizedDescription || '').toLowerCase();
   const bundleID = (app.bundleID || '').toLowerCase();
+  const desc = (app.localizedDescription || '').toLowerCase();
   
-  const gameKeywords = ['game', 'play', 'racing', 'clash', 'craft', 'puzzle', 'arcade'];
-  const photoKeywords = ['photo', 'camera', 'pic', 'image', 'snap', 'filter', 'lightroom'];
-  const musicKeywords = ['music', 'audio', 'sound', 'song', 'spotify', 'piano'];
-  const socialKeywords = ['social', 'chat', 'messenger', 'instagram', 'facebook', 'tiktok'];
-  const utilityKeywords = ['utility', 'tool', 'manager', 'vpn', 'scanner', 'calculator'];
-  const productivityKeywords = ['productivity', 'note', 'todo', 'office', 'pdf', 'document'];
+  // --- LỚP 1: KIỂM TRA TÊN APP (CHÍNH XÁC NHẤT) ---
+  // Định nghĩa các từ khóa đặc trưng trong tên App để gán cứng thẻ Tag
   
-  const allCategories = {
-    game: gameKeywords,
-    photo: photoKeywords,
-    music: musicKeywords,
-    social: socialKeywords,
-    utility: utilityKeywords,
-    productivity: productivityKeywords
-  };
-  
-  let scores = {};
-  
-  for (const [category, keywords] of Object.entries(allCategories)) {
-    scores[category] = 0;
-    keywords.forEach(keyword => {
-      if (name.includes(keyword)) scores[category] += 3;
-      if (desc.includes(keyword)) scores[category] += 1;
-      if (bundleID.includes(keyword)) scores[category] += 2;
-    });
+  // 1. GAME
+  const gameNames = [
+    'minecraft', 'roblox', 'lien quan', 'liên quân', 'pubg', 'free fire', 'toc chien', 'tốc chiến', 
+    'clash of clans', 'clash royale', 'genshin', 'honkai', 'play together', 'among us', 'zombie', 
+    'plants vs', 'gta', 'grand theft auto', 'call of duty', 'codm', 'fifa', 'pes', 'dream league', 
+    'asphalt', 'racing', 'mu online', 'audition', 'gunny', 'võ lâm', 'kiếm thế', 'brawl stars',
+    'candy crush', 'subway surfers', 'temple run', 'talking tom', '8 ball', 'shadow fight', 
+    'stickman', 'dragon ball', 'naruto', 'one piece', 'pokemon', 'hill climb', 'block blast',
+    'parking', 'survival', 'arena', 'moba', 'rpg', 'shoot', 'sniper', 'war', 'battle', 'fight'
+  ];
+  if (gameNames.some(k => name.includes(k))) return ['Game'];
+
+  // 2. SOCIAL
+  const socialNames = [
+    'facebook', 'messenger', 'instagram', 'threads', 'twitter', 'tweet', 'x', 'tiktok', 'douyin',
+    'zalo', 'telegram', 'whatsapp', 'viber', 'skype', 'discord', 'wechat', 'qq', 'snapchat', 
+    'tinder', 'bumble', 'dating', 'hẹn hò', 'pinterest', 'reddit', 'tumblr', 'linkedin'
+  ];
+  if (socialNames.some(k => name.includes(k))) return ['Social'];
+
+  // 3. PHOTO & VIDEO
+  const photoNames = [
+    'youtube', 'capcut', 'picsart', 'lightroom', 'photoshop', 'camera', 'b612', 'soda', 'ulike', 
+    'snow', 'foodie', 'vsco', 'snapseed', 'facetune', 'faceapp', 'remini', 'canva', 'instagram layout',
+    'kuji', 'dazz', 'nomo', 'wink', 'meitu', 'xingtu', 'epik', 'video', 'editor', 'photo', 'film', 
+    'cinema', 'netflix', 'hbo', 'disney', 'vtv', 'fpt play', 'vieon', 'galaxy play', 'tv360'
+  ];
+  if (photoNames.some(k => name.includes(k))) return ['Photo/Video'];
+
+  // 4. MUSIC
+  const musicNames = [
+    'spotify', 'zing mp3', 'naccuatui', 'nhaccuatui', 'soundcloud', 'apple music', 'shazam', 
+    'deezer', 'tidal', 'amazon music', 'youtube music', 'piano', 'guitar', 'drum', 'dj', 'mixer', 'mp3'
+  ];
+  if (musicNames.some(k => name.includes(k))) return ['Music'];
+
+  // 5. PRODUCTIVITY
+  const productivityNames = [
+    'word', 'excel', 'powerpoint', 'office', 'docs', 'sheet', 'slide', 'pdf', 'scanner', 
+    'zoom', 'teams', 'meet', 'classroom', 'duolingo', 'elsa', 'quizlet', 'dictionary', 
+    'từ điển', 'dịch', 'translate', 'calculator', 'calendar', 'note', 'ghi chú', 'notion', 'goodnotes'
+  ];
+  if (productivityNames.some(k => name.includes(k))) return ['Productivity'];
+
+  // 6. UTILITY
+  const utilityNames = [
+    'vpn', '1.1.1.1', 'adblock', 'wifi', 'speedtest', 'file', 'zip', 'rar', 'browser', 'chrome', 
+    'firefox', 'coccoc', 'edge', 'safari', 'google', 'map', 'grab', 'be', 'gojek', 'shopee', 
+    'lazada', 'tiki', 'banking', 'momo', 'zalopay', 'viettel', 'vina', 'mobi', '4g', 'esim'
+  ];
+  if (utilityNames.some(k => name.includes(k))) return ['Utility'];
+
+
+  // --- LỚP 2: KIỂM TRA BUNDLE ID ---
+  if (bundleID.includes('.game') || bundleID.includes('supercell') || bundleID.includes('garena') || bundleID.includes('riot')) {
+    return ['Game'];
   }
-  
-  const sortedCategories = Object.entries(scores)
-    .filter(([_, score]) => score > 0)
-    .sort(([_, a], [__, b]) => b - a)
-    .slice(0, 2)
-    .map(([cat, _]) => cat);
-  
-  if (sortedCategories.length === 0) {
-    const commonTags = ['utility', 'productivity', 'photo'];
-    return [commonTags[Math.floor(Math.random() * commonTags.length)]];
+  if (bundleID.includes('camera') || bundleID.includes('photo') || bundleID.includes('video')) {
+    return ['Photo/Video'];
   }
-  
-  return sortedCategories;
+
+
+  // --- LỚP 3: QUÉT MÔ TẢ (FALLBACK) ---
+  const combinedText = `${name} ${desc}`;
+
+  if (combinedText.includes('role-playing') || combinedText.includes('arcade') || 
+      combinedText.includes('simulation') || combinedText.includes('strategy game')) {
+    return ['Game'];
+  }
+
+  if (combinedText.includes('editing tool') || combinedText.includes('video editor') || 
+      combinedText.includes('photo editor')) {
+    return ['Photo/Video'];
+  }
+
+  return ['Utility'];
 }
 
 function smartDetectBadge(app) {
@@ -362,21 +395,16 @@ function smartDetectBadge(app) {
   
   const trendingKeywords = [
     'spotify', 'youtube', 'tiktok', 'instagram', 'facebook',
-    'whatsapp', 'telegram', 'netflix', 'minecraft'
+    'whatsapp', 'telegram', 'netflix', 'minecraft', 'roblox', 'gta'
   ];
   
   if (trendingKeywords.some(keyword => name.includes(keyword))) {
     return Math.random() > 0.5 ? 'trending' : 'top';
   }
   
-  const premiumKeywords = ['premium', 'pro', 'plus', 'gold', 'vip', 'unlocked'];
-  if (premiumKeywords.some(keyword => desc.includes(keyword))) {
-    return 'top';
-  }
-  
-  if (Math.random() < 0.2) {
-    const randomBadges = ['trending', 'top', null, null, null];
-    return randomBadges[Math.floor(Math.random() * randomBadges.length)];
+  const premiumKeywords = ['premium', 'pro', 'plus', 'gold', 'vip', 'unlocked', 'mod'];
+  if (premiumKeywords.some(keyword => desc.includes(keyword) || name.includes(keyword))) {
+    return 'vip';
   }
   
   return null;
