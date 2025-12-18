@@ -594,6 +594,24 @@
     "lastSync": "2025-12-18T15:14:03.353Z"
   },
   {
+    "id": "ipa-com.hevyapp.hevy-2.5.6",
+    "type": "ipa",
+    "name": "Hevy",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/com.hevyapp.hevy.png",
+    "desc": "Injected with Subscription Unlocked",
+    "tags": [
+      "Utility"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/18-12-2025/Hevy_2.5.6_Subscription_Unlocked_%40thisismanpreets_apptesters.org.ipa",
+    "version": "2.5.6",
+    "developer": "khomodvip",
+    "date": "2025-12-18",
+    "source": "apptesters",
+    "bundleID": "com.hevyapp.hevy",
+    "lastSync": "2025-12-18T15:26:15.934Z"
+  },
+  {
     "id": "ipa-io.veed.appstore-8.0.0",
     "type": "ipa",
     "name": "VEEDCaptions",
