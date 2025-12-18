@@ -1,5 +1,5 @@
 [
-    {    
+  {
     "id": "keyvipfree",
     "key": "VN-VO-DICH",
     "createdAt": "2025-12-02T21:37:37.690715",
@@ -41,10 +41,10 @@
     "createdAt": "2025-11-21T00:43:13.570172",
     "expiresAt": null,
     "maxUses": null,
-    "currentUses": 67,
+    "currentUses": 68,
     "active": true,
     "createdBy": "telegram_bot",
     "notes": "∞ days, ∞ uses",
-    "lastUsedAt": "2025-12-18T15:19:56.391Z"
+    "lastUsedAt": "2025-12-18T15:23:16.777Z"
   }
 ]
