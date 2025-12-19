@@ -1,5 +1,815 @@
 [
   {
+    "id": "ipa-co.videobakery.ReelsEditor-1.4.14",
+    "type": "ipa",
+    "name": "ReelMaker",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/co.videobakery.ReelsEditor.png",
+    "desc": "Injected with Premium",
+    "tags": [
+      "Photo/Video"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/19-12-2025/ReelMaker_1.4.14_Premium_%40thisismanpreets_apptesters.org.ipa",
+    "version": "1.4.14",
+    "developer": "khomodvip",
+    "date": "2025-12-19",
+    "source": "apptesters",
+    "bundleID": "co.videobakery.ReelsEditor",
+    "lastSync": "2025-12-19T12:44:12.139Z"
+  },
+  {
+    "id": "ipa-labs.mehmet.gptalk-1.9.3",
+    "type": "ipa",
+    "name": "GPTalk",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/labs.mehmet.gptalk.png",
+    "desc": "Injected with Premium",
+    "tags": [
+      "Utility"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/19-12-2025/GPTalk_1.9.3_Premium_%40thisismanpreets_apptesters.org.ipa",
+    "version": "1.9.3",
+    "developer": "khomodvip",
+    "date": "2025-12-19",
+    "source": "apptesters",
+    "bundleID": "labs.mehmet.gptalk",
+    "lastSync": "2025-12-19T12:44:12.139Z"
+  },
+  {
+    "id": "ipa-ideastudio.Weather-on-the-Way-2.3.2",
+    "type": "ipa",
+    "name": "OnTheWay",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/ideastudio.Weather-on-the-Way.png",
+    "desc": "Injected with Pro",
+    "tags": [
+      "Utility"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/19-12-2025/OnTheWay_2.3.2_Pro_%40thisismanpreets_apptesters.org.ipa",
+    "version": "2.3.2",
+    "developer": "khomodvip",
+    "date": "2025-12-19",
+    "source": "apptesters",
+    "bundleID": "ideastudio.Weather-on-the-Way",
+    "lastSync": "2025-12-19T12:44:12.140Z"
+  },
+  {
+    "id": "ipa-com.andydev.alpenglow-11.1.2",
+    "type": "ipa",
+    "name": "Alpenglow",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/com.andydev.alpenglow.png",
+    "desc": "Injected with Pro",
+    "tags": [
+      "Utility"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/19-12-2025/Alpenglow_11.1.2_Pro_%40thisismanpreets_apptesters.org.ipa",
+    "version": "11.1.2",
+    "developer": "khomodvip",
+    "date": "2025-12-19",
+    "source": "apptesters",
+    "bundleID": "com.andydev.alpenglow",
+    "lastSync": "2025-12-19T12:44:12.140Z"
+  },
+  {
+    "id": "ipa-com.camerasideas.InstaShot-1.92.1",
+    "type": "ipa",
+    "name": "InShot",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/com.camerasideas.InstaShot.png",
+    "desc": "Injected with Premium",
+    "tags": [
+      "Photo/Video"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/19-12-2025/InShot_1.92.1_Premium_%40thisismanpreets_apptesters.org.ipa",
+    "version": "1.92.1",
+    "developer": "khomodvip",
+    "date": "2025-12-19",
+    "source": "apptesters",
+    "bundleID": "com.camerasideas.InstaShot",
+    "lastSync": "2025-12-19T12:44:12.140Z"
+  },
+  {
+    "id": "ipa-com.identification.plant-2.73",
+    "type": "ipa",
+    "name": "LeafSnap",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/com.identification.plant.png",
+    "desc": "Injected with Premium",
+    "tags": [
+      "Utility"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/19-12-2025/LeafSnap_2.73_Premium_%40thisismanpreets_apptesters.org.ipa",
+    "version": "2.73",
+    "developer": "khomodvip",
+    "date": "2025-12-19",
+    "source": "apptesters",
+    "bundleID": "com.identification.plant",
+    "lastSync": "2025-12-19T12:44:12.140Z"
+  },
+  {
+    "id": "ipa-com.pronetis.ironballride2-1.4.11",
+    "type": "ipa",
+    "name": "GoingBalls",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/com.pronetis.ironballride2.png",
+    "desc": "Injected with noads",
+    "tags": [
+      "Utility"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/19-12-2025/GoingBalls_1.4.11_noads_%40thisismanpreets_apptesters.org.ipa",
+    "version": "1.4.11",
+    "developer": "khomodvip",
+    "date": "2025-12-19",
+    "source": "apptesters",
+    "bundleID": "com.pronetis.ironballride2",
+    "lastSync": "2025-12-19T12:44:12.141Z"
+  },
+  {
+    "id": "ipa-com.vertventures.stella-3.11.37",
+    "type": "ipa",
+    "name": "Astra",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/com.vertventures.stella.png",
+    "desc": "Injected with Premium",
+    "tags": [
+      "Utility"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/19-12-2025/Astra_3.11.37_Premium_%40thisismanpreets_apptesters.org.ipa",
+    "version": "3.11.37",
+    "developer": "khomodvip",
+    "date": "2025-12-19",
+    "source": "apptesters",
+    "bundleID": "com.vertventures.stella",
+    "lastSync": "2025-12-19T12:44:12.141Z"
+  },
+  {
+    "id": "ipa-com.JindoBlu.OfflineGamesIOS-1.51",
+    "type": "ipa",
+    "name": "OfflineGames",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/com.JindoBlu.OfflineGamesIOS.png",
+    "desc": "Injected with Mods",
+    "tags": [
+      "Utility"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/19-12-2025/OfflineGames_1.51_Mods_%40thisismanpreets_apptesters.org.ipa",
+    "version": "1.51",
+    "developer": "khomodvip",
+    "date": "2025-12-19",
+    "source": "apptesters",
+    "bundleID": "com.JindoBlu.OfflineGamesIOS",
+    "lastSync": "2025-12-19T12:44:12.141Z"
+  },
+  {
+    "id": "ipa-au.com.michaeltigas.MiniOS-1.11.1",
+    "type": "ipa",
+    "name": "dp",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/au.com.michaeltigas.MiniOS.png",
+    "desc": "Injected with Pro",
+    "tags": [
+      "Utility"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/19-12-2025/dp_1.11.1_Pro_%40thisismanpreets_apptesters.org.ipa",
+    "version": "1.11.1",
+    "developer": "khomodvip",
+    "date": "2025-12-19",
+    "source": "apptesters",
+    "bundleID": "au.com.michaeltigas.MiniOS",
+    "lastSync": "2025-12-19T12:44:12.141Z"
+  },
+  {
+    "id": "ipa-mobi.digitalminds.itunerfree-10.0.4",
+    "type": "ipa",
+    "name": "myTunerRadio",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/mobi.digitalminds.itunerfree.png",
+    "desc": "Injected with Premium",
+    "tags": [
+      "Utility"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/19-12-2025/myTunerRadio_10.0.4_Premium_%40thisismanpreets_apptesters.org.ipa",
+    "version": "10.0.4",
+    "developer": "khomodvip",
+    "date": "2025-12-19",
+    "source": "apptesters",
+    "bundleID": "mobi.digitalminds.itunerfree",
+    "lastSync": "2025-12-19T12:44:12.141Z"
+  },
+  {
+    "id": "ipa-io.labhouse.audioapp-2.9.3",
+    "type": "ipa",
+    "name": "SummaryAI",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/io.labhouse.audioapp.png",
+    "desc": "Injected with Premium",
+    "tags": [
+      "Utility"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/19-12-2025/SummaryAI_2.9.3_Premium_%40thisismanpreets_apptesters.org.ipa",
+    "version": "2.9.3",
+    "developer": "khomodvip",
+    "date": "2025-12-19",
+    "source": "apptesters",
+    "bundleID": "io.labhouse.audioapp",
+    "lastSync": "2025-12-19T12:44:12.142Z"
+  },
+  {
+    "id": "ipa-com.mobilefootie.fotmobpro-1221.0",
+    "type": "ipa",
+    "name": "FotMob",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/com.mobilefootie.fotmobpro.png",
+    "desc": "Injected with Premium",
+    "tags": [
+      "Utility"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/19-12-2025/FotMob_1221.0_Premium_%40thisismanpreets_apptesters.org.ipa",
+    "version": "1221.0",
+    "developer": "khomodvip",
+    "date": "2025-12-19",
+    "source": "apptesters",
+    "bundleID": "com.mobilefootie.fotmobpro",
+    "lastSync": "2025-12-19T12:44:12.142Z"
+  },
+  {
+    "id": "ipa-com.huckleberry-labs.app-0.9.283",
+    "type": "ipa",
+    "name": "Huckleberry",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/com.huckleberry-labs.app.png",
+    "desc": "Injected with Premium",
+    "tags": [
+      "Utility"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/19-12-2025/Huckleberry_0.9.283_Premium_%40thisismanpreets_apptesters.org.ipa",
+    "version": "0.9.283",
+    "developer": "khomodvip",
+    "date": "2025-12-19",
+    "source": "apptesters",
+    "bundleID": "com.huckleberry-labs.app",
+    "lastSync": "2025-12-19T12:44:12.142Z"
+  },
+  {
+    "id": "ipa-com.geniussoftware.GeniusScan-8.6.2",
+    "type": "ipa",
+    "name": "GeniusScan",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/com.geniussoftware.GeniusScan.png",
+    "desc": "Injected with Premium",
+    "tags": [
+      "Utility"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/19-12-2025/GeniusScan_8.6.2_Premium_%40thisismanpreets_apptesters.org.ipa",
+    "version": "8.6.2",
+    "developer": "khomodvip",
+    "date": "2025-12-19",
+    "source": "apptesters",
+    "bundleID": "com.geniussoftware.GeniusScan",
+    "lastSync": "2025-12-19T12:44:12.142Z"
+  },
+  {
+    "id": "ipa-com.genau.MemoryCircle-3.1.7",
+    "type": "ipa",
+    "name": "VocaCircle",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/com.genau.MemoryCircle.png",
+    "desc": "Injected with Premium",
+    "tags": [
+      "Utility"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/19-12-2025/VocaCircle_3.1.7_Premium_%40thisismanpreets_apptesters.org.ipa",
+    "version": "3.1.7",
+    "developer": "khomodvip",
+    "date": "2025-12-19",
+    "source": "apptesters",
+    "bundleID": "com.genau.MemoryCircle",
+    "lastSync": "2025-12-19T12:44:12.143Z"
+  },
+  {
+    "id": "ipa-com.ADPTVLTD.push-3.9.1",
+    "type": "ipa",
+    "name": "PUSH",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/com.ADPTVLTD.push.png",
+    "desc": "Injected with Subscription Unlocked",
+    "tags": [
+      "Utility"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/19-12-2025/PUSH_3.9.1_Subscription_Unlocked_%40thisismanpreets_apptesters.org.ipa",
+    "version": "3.9.1",
+    "developer": "khomodvip",
+    "date": "2025-12-19",
+    "source": "apptesters",
+    "bundleID": "com.ADPTVLTD.push",
+    "lastSync": "2025-12-19T12:44:12.143Z"
+  },
+  {
+    "id": "ipa-co.visualsupply.cam-453.0.1",
+    "type": "ipa",
+    "name": "VSCO",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/co.visualsupply.cam.png",
+    "desc": "Injected with Subscription Unlocked",
+    "tags": [
+      "Photo/Video"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/19-12-2025/VSCO_453.0.1_Subscription_Unlocked_%40thisismanpreets_apptesters.org.ipa",
+    "version": "453.0.1",
+    "developer": "khomodvip",
+    "date": "2025-12-19",
+    "source": "apptesters",
+    "bundleID": "co.visualsupply.cam",
+    "lastSync": "2025-12-19T12:44:12.143Z"
+  },
+  {
+    "id": "ipa-dazz.camera.vintagecamera-2.13.1",
+    "type": "ipa",
+    "name": "Dazz",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/dazz.camera.vintagecamera.png",
+    "desc": "Injected with Pro",
+    "tags": [
+      "Photo/Video"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/19-12-2025/Dazz_2.13.1_Pro_%40thisismanpreets_apptesters.org.ipa",
+    "version": "2.13.1",
+    "developer": "khomodvip",
+    "date": "2025-12-19",
+    "source": "apptesters",
+    "bundleID": "dazz.camera.vintagecamera",
+    "lastSync": "2025-12-19T12:44:12.143Z"
+  },
+  {
+    "id": "ipa-com.mwm.stems-4.03.01",
+    "type": "ipa",
+    "name": "Stemz",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/com.mwm.stems.png",
+    "desc": "Injected with Pro",
+    "tags": [
+      "Utility"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/19-12-2025/Stemz_4.03.01_Pro_%40thisismanpreets_apptesters.org.ipa",
+    "version": "4.03.01",
+    "developer": "khomodvip",
+    "date": "2025-12-19",
+    "source": "apptesters",
+    "bundleID": "com.mwm.stems",
+    "lastSync": "2025-12-19T12:44:12.143Z"
+  },
+  {
+    "id": "ipa-com.dehancer.film.ios-app-5.3",
+    "type": "ipa",
+    "name": "Dehancer",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/com.dehancer.film.ios-app.png",
+    "desc": "Injected with Subscription Unlocked",
+    "tags": [
+      "Utility"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/19-12-2025/Dehancer_5.3_Subscription_Unlocked_%40thisismanpreets_apptesters.org.ipa",
+    "version": "5.3",
+    "developer": "khomodvip",
+    "date": "2025-12-19",
+    "source": "apptesters",
+    "bundleID": "com.dehancer.film.ios-app",
+    "lastSync": "2025-12-19T12:44:12.143Z"
+  },
+  {
+    "id": "ipa-com.chaninicholas.chaniapp-2.7.0",
+    "type": "ipa",
+    "name": "CHANI",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/com.chaninicholas.chaniapp.png",
+    "desc": "Injected with Pro",
+    "tags": [
+      "Utility"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/19-12-2025/CHANI_2.7.0_Pro_%40thisismanpreets_apptesters.org.ipa",
+    "version": "2.7.0",
+    "developer": "khomodvip",
+    "date": "2025-12-19",
+    "source": "apptesters",
+    "bundleID": "com.chaninicholas.chaniapp",
+    "lastSync": "2025-12-19T12:44:12.144Z"
+  },
+  {
+    "id": "ipa-com.zijayrate.analogcam-8.2.2",
+    "type": "ipa",
+    "name": "OldRoll",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/com.zijayrate.analogcam.png",
+    "desc": "Injected with IAP",
+    "tags": [
+      "Utility"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/19-12-2025/OldRoll_8.2.2_IAP_%40thisismanpreets_apptesters.org.ipa",
+    "version": "8.2.2",
+    "developer": "khomodvip",
+    "date": "2025-12-19",
+    "source": "apptesters",
+    "bundleID": "com.zijayrate.analogcam",
+    "lastSync": "2025-12-19T12:44:12.144Z"
+  },
+  {
+    "id": "ipa-de.komoot.berlinbikeapp-2025.52.0",
+    "type": "ipa",
+    "name": "Komoot",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/de.komoot.berlinbikeapp.png",
+    "desc": "Injected with Premium",
+    "tags": [
+      "Utility"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/19-12-2025/Komoot_2025.52.0_Premium_%40thisismanpreets_apptesters.org.ipa",
+    "version": "2025.52.0",
+    "developer": "khomodvip",
+    "date": "2025-12-19",
+    "source": "apptesters",
+    "bundleID": "de.komoot.berlinbikeapp",
+    "lastSync": "2025-12-19T12:44:12.144Z"
+  },
+  {
+    "id": "ipa-com.calm.calmapp-6.86",
+    "type": "ipa",
+    "name": "Calm",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/com.calm.calmapp.png",
+    "desc": "Injected with Premium",
+    "tags": [
+      "Utility"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/19-12-2025/Calm_6.86_Premium_%40thisismanpreets_apptesters.org.ipa",
+    "version": "6.86",
+    "developer": "khomodvip",
+    "date": "2025-12-19",
+    "source": "apptesters",
+    "bundleID": "com.calm.calmapp",
+    "lastSync": "2025-12-19T12:44:12.144Z"
+  },
+  {
+    "id": "ipa-com.waterminder.waterminder-7.2",
+    "type": "ipa",
+    "name": "WaterMinder",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/com.waterminder.waterminder.png",
+    "desc": "Injected with Premium",
+    "tags": [
+      "Utility"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/19-12-2025/WaterMinder_7.2_Premium_%40thisismanpreets_apptesters.org.ipa",
+    "version": "7.2",
+    "developer": "khomodvip",
+    "date": "2025-12-19",
+    "source": "apptesters",
+    "bundleID": "com.waterminder.waterminder",
+    "lastSync": "2025-12-19T12:44:12.144Z"
+  },
+  {
+    "id": "ipa-com.fingersoft.hillclimbracing-1.67.6",
+    "type": "ipa",
+    "name": "HillClimb",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/com.fingersoft.hillclimbracing.png",
+    "desc": "Injected with IAP",
+    "tags": [
+      "Utility"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/19-12-2025/HillClimb_1.67.6_IAP_%40thisismanpreets_apptesters.org.ipa",
+    "version": "1.67.6",
+    "developer": "khomodvip",
+    "date": "2025-12-19",
+    "source": "apptesters",
+    "bundleID": "com.fingersoft.hillclimbracing",
+    "lastSync": "2025-12-19T12:44:12.144Z"
+  },
+  {
+    "id": "ipa-com.adobe.premiere.ios-25.12.0",
+    "type": "ipa",
+    "name": "Premiere",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/com.adobe.premiere.ios.png",
+    "desc": "Injected with Subscription Unlocked",
+    "tags": [
+      "Utility"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/19-12-2025/Premiere_25.12.0_Subscription_Unlocked_%40thisismanpreets_apptesters.org.ipa",
+    "version": "25.12.0",
+    "developer": "khomodvip",
+    "date": "2025-12-19",
+    "source": "apptesters",
+    "bundleID": "com.adobe.premiere.ios",
+    "lastSync": "2025-12-19T12:44:12.144Z"
+  },
+  {
+    "id": "ipa-com.ahaf.mshion-7.32.0",
+    "type": "ipa",
+    "name": "ism",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/com.ahaf.mshion.png",
+    "desc": "Injected with Subscription Unlocked",
+    "tags": [
+      "Utility"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/19-12-2025/ism_7.32.0_Subscription_Unlocked_%40thisismanpreets_apptesters.org.ipa",
+    "version": "7.32.0",
+    "developer": "khomodvip",
+    "date": "2025-12-19",
+    "source": "apptesters",
+    "bundleID": "com.ahaf.mshion",
+    "lastSync": "2025-12-19T12:44:12.145Z"
+  },
+  {
+    "id": "ipa-boomer.Smart-Video-12.49.0",
+    "type": "ipa",
+    "name": "Captions",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/boomer.Smart-Video.png",
+    "desc": "Injected with Subscription Unlocked",
+    "tags": [
+      "Photo/Video"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/19-12-2025/Captions_12.49.0_Subscription_Unlocked_%40thisismanpreets_apptesters.org.ipa",
+    "version": "12.49.0",
+    "developer": "khomodvip",
+    "date": "2025-12-19",
+    "source": "apptesters",
+    "bundleID": "boomer.Smart-Video",
+    "lastSync": "2025-12-19T12:44:12.145Z"
+  },
+  {
+    "id": "ipa-com.abishkking.sixpack-1.43.0",
+    "type": "ipa",
+    "name": "SixPackAbsAbsWorkout",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/com.abishkking.sixpack.png",
+    "desc": "Injected with IAP",
+    "tags": [
+      "Social"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/19-12-2025/SixPackAbsAbsWorkout_1.43.0_IAP_%40thisismanpreets_apptesters.org.ipa",
+    "version": "1.43.0",
+    "developer": "khomodvip",
+    "date": "2025-12-19",
+    "source": "apptesters",
+    "bundleID": "com.abishkking.sixpack",
+    "lastSync": "2025-12-19T12:44:12.145Z"
+  },
+  {
+    "id": "ipa-com.commsource.BeautyPlus-7.26.0",
+    "type": "ipa",
+    "name": "BeautyPlus",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/com.commsource.BeautyPlus.png",
+    "desc": "Injected with Premium",
+    "tags": [
+      "Utility"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/19-12-2025/BeautyPlus_7.26.0_Premium_%40thisismanpreets_apptesters.org.ipa",
+    "version": "7.26.0",
+    "developer": "khomodvip",
+    "date": "2025-12-19",
+    "source": "apptesters",
+    "bundleID": "com.commsource.BeautyPlus",
+    "lastSync": "2025-12-19T12:44:12.145Z"
+  },
+  {
+    "id": "ipa-com.laubrothersllc.BabyArt-3.49.8",
+    "type": "ipa",
+    "name": "Precious",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/com.laubrothersllc.BabyArt.png",
+    "desc": "Injected with Premium",
+    "tags": [
+      "Utility"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/19-12-2025/Precious_3.49.8_Premium_%40thisismanpreets_apptesters.org.ipa",
+    "version": "3.49.8",
+    "developer": "khomodvip",
+    "date": "2025-12-19",
+    "source": "apptesters",
+    "bundleID": "com.laubrothersllc.BabyArt",
+    "lastSync": "2025-12-19T12:44:12.145Z"
+  },
+  {
+    "id": "ipa-com.TickTick.task-7.8.21",
+    "type": "ipa",
+    "name": "TickTick",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/com.TickTick.task.png",
+    "desc": "Injected with Pro",
+    "tags": [
+      "Utility"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/19-12-2025/TickTick_7.8.21_Pro_%40thisismanpreets_apptesters.org.ipa",
+    "version": "7.8.21",
+    "developer": "khomodvip",
+    "date": "2025-12-19",
+    "source": "apptesters",
+    "bundleID": "com.TickTick.task",
+    "lastSync": "2025-12-19T12:44:12.145Z"
+  },
+  {
+    "id": "ipa-com.ibit.UNPOSED-4.6.1",
+    "type": "ipa",
+    "name": "Unscripted",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/com.ibit.UNPOSED.png",
+    "desc": "Injected with Pro",
+    "tags": [
+      "Utility"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/19-12-2025/Unscripted_4.6.1_Pro_%40thisismanpreets_apptesters.org.ipa",
+    "version": "4.6.1",
+    "developer": "khomodvip",
+    "date": "2025-12-19",
+    "source": "apptesters",
+    "bundleID": "com.ibit.UNPOSED",
+    "lastSync": "2025-12-19T12:44:12.145Z"
+  },
+  {
+    "id": "ipa-com.tickettothemoon.video.persona-1.14.42",
+    "type": "ipa",
+    "name": "Persona",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/com.tickettothemoon.video.persona.png",
+    "desc": "Injected with VIP",
+    "tags": [
+      "Photo/Video"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/19-12-2025/Persona_1.14.42_VIP_%40thisismanpreets_apptesters.org.ipa",
+    "version": "1.14.42",
+    "developer": "khomodvip",
+    "date": "2025-12-19",
+    "source": "apptesters",
+    "bundleID": "com.tickettothemoon.video.persona",
+    "lastSync": "2025-12-19T12:44:12.146Z"
+  },
+  {
+    "id": "ipa-com.vgfit.fitnessvip-1.10.13",
+    "type": "ipa",
+    "name": "FB",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/com.vgfit.fitnessvip.png",
+    "desc": "Injected with Pro",
+    "tags": [
+      "Utility"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/19-12-2025/FB_1.10.13_Pro_%40thisismanpreets_apptesters.org.ipa",
+    "version": "1.10.13",
+    "developer": "khomodvip",
+    "date": "2025-12-19",
+    "source": "apptesters",
+    "bundleID": "com.vgfit.fitnessvip",
+    "lastSync": "2025-12-19T12:44:12.146Z"
+  },
+  {
+    "id": "ipa-com.daymore.Across-1.12.5",
+    "type": "ipa",
+    "name": "Across",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/com.daymore.Across.png",
+    "desc": "Injected with Premium",
+    "tags": [
+      "Utility"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/19-12-2025/Across_1.12.5_Premium_%40thisismanpreets_apptesters.org.ipa",
+    "version": "1.12.5",
+    "developer": "khomodvip",
+    "date": "2025-12-19",
+    "source": "apptesters",
+    "bundleID": "com.daymore.Across",
+    "lastSync": "2025-12-19T12:44:12.146Z"
+  },
+  {
+    "id": "ipa-com.iteration-mobile.radarbot-free-ww-9.32",
+    "type": "ipa",
+    "name": "Radarbot",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/com.iteration-mobile.radarbot-free-ww.png",
+    "desc": "Injected with Gold",
+    "tags": [
+      "Utility"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/19-12-2025/Radarbot_9.32_Gold_%40thisismanpreets_apptesters.org.ipa",
+    "version": "9.32",
+    "developer": "khomodvip",
+    "date": "2025-12-19",
+    "source": "apptesters",
+    "bundleID": "com.iteration-mobile.radarbot-free-ww",
+    "lastSync": "2025-12-19T12:44:12.146Z"
+  },
+  {
+    "id": "ipa-org.iggymedia.periodtracker-9.94.0",
+    "type": "ipa",
+    "name": "Flo",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/org.iggymedia.periodtracker.png",
+    "desc": "Injected with Premium",
+    "tags": [
+      "Utility"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/19-12-2025/Flo_9.94.0_Premium_%40thisismanpreets_apptesters.org.ipa",
+    "version": "9.94.0",
+    "developer": "khomodvip",
+    "date": "2025-12-19",
+    "source": "apptesters",
+    "bundleID": "org.iggymedia.periodtracker",
+    "lastSync": "2025-12-19T12:44:12.146Z"
+  },
+  {
+    "id": "ipa-health.sleep.sounds.tracker.alarm.calm-3.2.7",
+    "type": "ipa",
+    "name": "ShutEye",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/health.sleep.sounds.tracker.alarm.calm.png",
+    "desc": "Injected with Premium",
+    "tags": [
+      "Utility"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/19-12-2025/ShutEye_3.2.7_Premium_%40thisismanpreets_apptesters.org.ipa",
+    "version": "3.2.7",
+    "developer": "khomodvip",
+    "date": "2025-12-19",
+    "source": "apptesters",
+    "bundleID": "health.sleep.sounds.tracker.alarm.calm",
+    "lastSync": "2025-12-19T12:44:12.146Z"
+  },
+  {
+    "id": "ipa-com.skylum.luminaripad-3.1",
+    "type": "ipa",
+    "name": "Luminar",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/com.skylum.luminaripad.png",
+    "desc": "Injected with Subscription Unlocked",
+    "tags": [
+      "Utility"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/19-12-2025/Luminar_3.1_Subscription_Unlocked_%40thisismanpreets_apptesters.org.ipa",
+    "version": "3.1",
+    "developer": "khomodvip",
+    "date": "2025-12-19",
+    "source": "apptesters",
+    "bundleID": "com.skylum.luminaripad",
+    "lastSync": "2025-12-19T12:44:12.146Z"
+  },
+  {
+    "id": "ipa-com.elevateapp.elevate-5.221.0",
+    "type": "ipa",
+    "name": "Elevate",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/com.elevateapp.elevate.png",
+    "desc": "Injected with Subscription Unlocked",
+    "tags": [
+      "Utility"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/19-12-2025/Elevate_5.221.0_Subscription_Unlocked_%40thisismanpreets_apptesters.org.ipa",
+    "version": "5.221.0",
+    "developer": "khomodvip",
+    "date": "2025-12-19",
+    "source": "apptesters",
+    "bundleID": "com.elevateapp.elevate",
+    "lastSync": "2025-12-19T12:44:12.146Z"
+  },
+  {
+    "id": "ipa-com.snowcorp.glowup-3.5.4",
+    "type": "ipa",
+    "name": "GlowUp",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/com.snowcorp.glowup.png",
+    "desc": "Injected with Subscription Unlocked",
+    "tags": [
+      "Utility"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/19-12-2025/GlowUp_3.5.4_Subscription_Unlocked_%40thisismanpreets_apptesters.org.ipa",
+    "version": "3.5.4",
+    "developer": "khomodvip",
+    "date": "2025-12-19",
+    "source": "apptesters",
+    "bundleID": "com.snowcorp.glowup",
+    "lastSync": "2025-12-19T12:44:12.147Z"
+  },
+  {
+    "id": "ipa-com.yengshine.proccd-5.2.1",
+    "type": "ipa",
+    "name": "ProCCD",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/com.yengshine.proccd.png",
+    "desc": "Injected with Pro",
+    "tags": [
+      "Utility"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/19-12-2025/ProCCD_5.2.1_Pro_%40thisismanpreets_apptesters.org.ipa",
+    "version": "5.2.1",
+    "developer": "khomodvip",
+    "date": "2025-12-19",
+    "source": "apptesters",
+    "bundleID": "com.yengshine.proccd",
+    "lastSync": "2025-12-19T12:44:12.147Z"
+  },
+  {
     "id": "ipa-io.veed.appstore-8.1.1",
     "type": "ipa",
     "name": "VEEDCaptions",
