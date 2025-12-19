@@ -810,6 +810,150 @@
     "lastSync": "2025-12-19T12:44:12.147Z"
   },
   {
+    "id": "ipa-com.aoklab.fewerphotos-3.2.42",
+    "type": "ipa",
+    "name": "swipewipe",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/com.aoklab.fewerphotos.png",
+    "desc": "Injected with Pro",
+    "tags": [
+      "Photo/Video"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/19-12-2025/swipewipe_3.2.42_Pro_%40thisismanpreets_apptesters.org.ipa",
+    "version": "3.2.42",
+    "developer": "khomodvip",
+    "date": "2025-12-19",
+    "source": "apptesters",
+    "bundleID": "com.aoklab.fewerphotos",
+    "lastSync": "2025-12-19T18:57:34.387Z"
+  },
+  {
+    "id": "ipa-com.dr1ven.eraser-2025.50.03",
+    "type": "ipa",
+    "name": "Photoroom",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/com.dr1ven.eraser.png",
+    "desc": "Injected with Subscription Unlocked",
+    "tags": [
+      "Photo/Video"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/19-12-2025/Photoroom_2025.50.03_Subscription_Unlocked_%40thisismanpreets_apptesters.org.ipa",
+    "version": "2025.50.03",
+    "developer": "khomodvip",
+    "date": "2025-12-19",
+    "source": "apptesters",
+    "bundleID": "com.dr1ven.eraser",
+    "lastSync": "2025-12-19T18:57:34.387Z"
+  },
+  {
+    "id": "ipa-com.dopedevelopment.Panels-9.25",
+    "type": "ipa",
+    "name": "SCRL",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/com.dopedevelopment.Panels.png",
+    "desc": "Injected with Subscription Unlocked",
+    "tags": [
+      "Utility"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/19-12-2025/SCRL_9.25_Subscription_Unlocked_%40thisismanpreets_apptesters.org.ipa",
+    "version": "9.25",
+    "developer": "khomodvip",
+    "date": "2025-12-19",
+    "source": "apptesters",
+    "bundleID": "com.dopedevelopment.Panels",
+    "lastSync": "2025-12-19T18:57:34.387Z"
+  },
+  {
+    "id": "ipa-com.revivasoftworks.Snore-Lab-6.0.9",
+    "type": "ipa",
+    "name": "SnoreLab",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/com.revivasoftworks.Snore-Lab.png",
+    "desc": "Injected with Subscription Unlocked",
+    "tags": [
+      "Utility"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/19-12-2025/SnoreLab_6.0.9_Subscription_Unlocked_%40thisismanpreets_apptesters.org.ipa",
+    "version": "6.0.9",
+    "developer": "khomodvip",
+    "date": "2025-12-19",
+    "source": "apptesters",
+    "bundleID": "com.revivasoftworks.Snore-Lab",
+    "lastSync": "2025-12-19T18:57:34.388Z"
+  },
+  {
+    "id": "ipa-com.readdle.CalendarsLite-5.37.15",
+    "type": "ipa",
+    "name": "Calendars",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/com.readdle.CalendarsLite.png",
+    "desc": "Injected with Subscription Unlocked",
+    "tags": [
+      "Productivity"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/19-12-2025/Calendars_5.37.15_Subscription_Unlocked_%40thisismanpreets_apptesters.org.ipa",
+    "version": "5.37.15",
+    "developer": "khomodvip",
+    "date": "2025-12-19",
+    "source": "apptesters",
+    "bundleID": "com.readdle.CalendarsLite",
+    "lastSync": "2025-12-19T18:57:34.388Z"
+  },
+  {
+    "id": "ipa-com.outerspaceapps.itranslate-17.4.64",
+    "type": "ipa",
+    "name": "iTranslate",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/com.outerspaceapps.itranslate.png",
+    "desc": "Injected with Subscription Unlocked",
+    "tags": [
+      "Productivity"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/19-12-2025/iTranslate_17.4.64_Subscription_Unlocked_%40thisismanpreets_apptesters.org.ipa",
+    "version": "17.4.64",
+    "developer": "khomodvip",
+    "date": "2025-12-19",
+    "source": "apptesters",
+    "bundleID": "com.outerspaceapps.itranslate",
+    "lastSync": "2025-12-19T18:57:34.388Z"
+  },
+  {
+    "id": "ipa-com.ulisesolave.Fitia-20.0.5",
+    "type": "ipa",
+    "name": "Fitia",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/com.ulisesolave.Fitia.png",
+    "desc": "Injected with Subscription Unlocked",
+    "tags": [
+      "Utility"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/19-12-2025/Fitia_20.0.5_Subscription_Unlocked_%40thisismanpreets_apptesters.org.ipa",
+    "version": "20.0.5",
+    "developer": "khomodvip",
+    "date": "2025-12-19",
+    "source": "apptesters",
+    "bundleID": "com.ulisesolave.Fitia",
+    "lastSync": "2025-12-19T18:57:34.388Z"
+  },
+  {
+    "id": "ipa-jp.co.bandainamcoent.BNEI0333-6.16.0",
+    "type": "ipa",
+    "name": "DBLEGENDS",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/jp.co.bandainamcoent.BNEI0333.png",
+    "desc": "Injected with Mods",
+    "tags": [
+      "Utility"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/19-12-2025/DBLEGENDS_6.16.0_Mods_%40thisismanpreets_apptesters.org.ipa",
+    "version": "6.16.0",
+    "developer": "khomodvip",
+    "date": "2025-12-19",
+    "source": "apptesters",
+    "bundleID": "jp.co.bandainamcoent.BNEI0333",
+    "lastSync": "2025-12-19T18:57:34.388Z"
+  },
+  {
     "id": "ipa-io.veed.appstore-8.1.1",
     "type": "ipa",
     "name": "VEEDCaptions",
