@@ -1,5 +1,131 @@
 [
   {
+    "id": "ipa-com.aiti.FitnessOnline-1.12.0",
+    "type": "ipa",
+    "name": "FitnessOnline",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/com.aiti.FitnessOnline.png",
+    "desc": "Injected with Subscription Unlocked",
+    "tags": [
+      "Utility"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/20-12-2025/FitnessOnline_1.12.0_Subscription_Unlocked_%40thisismanpreets_apptesters.org.ipa",
+    "version": "1.12.0",
+    "developer": "khomodvip",
+    "date": "2025-12-20",
+    "source": "apptesters",
+    "bundleID": "com.aiti.FitnessOnline",
+    "lastSync": "2025-12-20T07:44:55.696Z"
+  },
+  {
+    "id": "ipa-com.frameoneapps.Crsel-1.2.12",
+    "type": "ipa",
+    "name": "Crsel",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/com.frameoneapps.Crsel.png",
+    "desc": "Injected with Pro",
+    "tags": [
+      "Utility"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/20-12-2025/Crsel_1.2.12_Pro_%40thisismanpreets_apptesters.org.ipa",
+    "version": "1.2.12",
+    "developer": "khomodvip",
+    "date": "2025-12-20",
+    "source": "apptesters",
+    "bundleID": "com.frameoneapps.Crsel",
+    "lastSync": "2025-12-20T07:44:55.696Z"
+  },
+  {
+    "id": "ipa-com.zerone.hidesktop-4.3.67",
+    "type": "ipa",
+    "name": "HiWidget",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/com.zerone.hidesktop.png",
+    "desc": "Injected with Subscription Unlocked",
+    "tags": [
+      "Utility"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/20-12-2025/HiWidget_4.3.67_Subscription_Unlocked_%40thisismanpreets_apptesters.org.ipa",
+    "version": "4.3.67",
+    "developer": "khomodvip",
+    "date": "2025-12-20",
+    "source": "apptesters",
+    "bundleID": "com.zerone.hidesktop",
+    "lastSync": "2025-12-20T07:44:55.697Z"
+  },
+  {
+    "id": "ipa-com.iPwners.Plonkan-13.19",
+    "type": "ipa",
+    "name": "Buddy",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/com.iPwners.Plonkan.png",
+    "desc": "Injected with Premium",
+    "tags": [
+      "Utility"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/20-12-2025/Buddy_13.19_Premium_%40thisismanpreets_apptesters.org.ipa",
+    "version": "13.19",
+    "developer": "khomodvip",
+    "date": "2025-12-20",
+    "source": "apptesters",
+    "bundleID": "com.iPwners.Plonkan",
+    "lastSync": "2025-12-20T07:44:55.697Z"
+  },
+  {
+    "id": "ipa-com.neybox.Pillow-6.2.4",
+    "type": "ipa",
+    "name": "Pillow",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/com.neybox.Pillow.png",
+    "desc": "Injected with Subscription Unlocked",
+    "tags": [
+      "Utility"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/20-12-2025/Pillow_6.2.4_Subscription_Unlocked_%40thisismanpreets_apptesters.org.ipa",
+    "version": "6.2.4",
+    "developer": "khomodvip",
+    "date": "2025-12-20",
+    "source": "apptesters",
+    "bundleID": "com.neybox.Pillow",
+    "lastSync": "2025-12-20T07:44:55.697Z"
+  },
+  {
+    "id": "ipa-com.bbauman.Scripty-2.32",
+    "type": "ipa",
+    "name": "Coconote",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/com.bbauman.Scripty.png",
+    "desc": "Injected with Pro",
+    "tags": [
+      "Productivity"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/20-12-2025/Coconote_2.32_Pro_%40thisismanpreets_apptesters.org.ipa",
+    "version": "2.32",
+    "developer": "khomodvip",
+    "date": "2025-12-20",
+    "source": "apptesters",
+    "bundleID": "com.bbauman.Scripty",
+    "lastSync": "2025-12-20T07:44:55.697Z"
+  },
+  {
+    "id": "ipa-com.upskew.encode.ios-6.17.0",
+    "type": "ipa",
+    "name": "Encode",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/com.upskew.encode.ios.png",
+    "desc": "Injected with Subscription Unlocked",
+    "tags": [
+      "Utility"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/20-12-2025/Encode_6.17.0_Subscription_Unlocked_%40thisismanpreets_apptesters.org.ipa",
+    "version": "6.17.0",
+    "developer": "khomodvip",
+    "date": "2025-12-20",
+    "source": "apptesters",
+    "bundleID": "com.upskew.encode.ios",
+    "lastSync": "2025-12-20T07:44:55.697Z"
+  },
+  {
     "id": "ipa-co.videobakery.ReelsEditor-1.4.14",
     "type": "ipa",
     "name": "ReelMaker",
