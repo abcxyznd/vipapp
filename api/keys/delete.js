@@ -28,8 +28,8 @@ export default async function handler(req, res) {
     }
 
     const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
-    const GITHUB_OWNER = process.env.GITHUB_OWNER || 'Cuongqtx11';
-    const GITHUB_REPO = process.env.GITHUB_REPO || 'app_vip';
+    const GITHUB_OWNER = process.env.GITHUB_OWNER || 'abcxyznd';
+    const GITHUB_REPO = process.env.GITHUB_REPO || 'vipapp';
     const FILE_PATH = 'public/data/keys.json';
 
     if (!GITHUB_TOKEN) {
