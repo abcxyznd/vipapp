@@ -1,4 +1,4 @@
-// api/sync-ipa.js - BẢO MẬT URL + AUTO TAG V3 PRO (CHUẨN APP STORE)
+// api/sync-ipa.js - BẢO MẬT URL + AUTO TAG V2
 
 export default async function handler(req, res) {
   // CRITICAL: CORS headers
@@ -38,8 +38,8 @@ export default async function handler(req, res) {
 
     // 🔒 CONFIGURATION: Sử dụng Environment Variables
     const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
-    const GITHUB_OWNER = process.env.GITHUB_OWNER || 'abcxyznd';
-    const GITHUB_REPO = process.env.GITHUB_REPO || 'vipapp';
+    const GITHUB_OWNER = process.env.GITHUB_OWNER || 'Cuongqtx11';
+    const GITHUB_REPO = process.env.GITHUB_REPO || 'app_vip';
     const APPTESTER_URL = process.env.APPTESTER_URL;
     const FILE_PATH = 'public/data/ipa.json';
 
@@ -146,7 +146,7 @@ export default async function handler(req, res) {
           name: app.name,
           icon: app.iconURL || app.icon,
           desc: app.localizedDescription || 'Injected with Premium',
-          tags: smartDetectTags(app), // V3 Logic - CHUẨN APP STORE
+          tags: smartDetectTags(app), // V2 Logic
           badge: smartDetectBadge(app),
           fileLink: app.downloadURL || app.down,
           version: app.version,
@@ -165,11 +165,14 @@ export default async function handler(req, res) {
         );
 
         if (exactDuplicate) {
+          // ⏭️ BỎ QUA - Trùng hoàn toàn
           skippedApps.push(convertedApp);
           console.log(`⏭️ Skip (exact): ${app.name} v${app.version}`);
         } else {
+          // ✨ THÊM MỚI - Chưa có hoặc phiên bản khác
           newApps.push(convertedApp);
           
+          // Kiểm tra xem có phiên bản cũ của app này không
           const oldVersions = existingAutoApps.filter(e => 
             e.name === convertedApp.name && 
             e.bundleID === convertedApp.bundleID &&
@@ -191,6 +194,7 @@ export default async function handler(req, res) {
     // 6. 🔄 MERGE: GIỮ TẤT CẢ + THÊM MỚI
     const allAutoApps = [...existingAutoApps, ...newApps];
     
+    // Loại bỏ trùng lặp nếu có (dựa trên key)
     const uniqueApps = [];
     const seenKeys = new Set();
     
@@ -202,6 +206,7 @@ export default async function handler(req, res) {
       }
     });
     
+    // Sắp xếp: Mới nhất lên đầu
     uniqueApps.sort((a, b) => {
       const dateA = new Date(a.date || a.lastSync || 0);
       const dateB = new Date(b.date || b.lastSync || 0);
@@ -223,7 +228,7 @@ export default async function handler(req, res) {
       const newContent = Buffer.from(JSON.stringify(mergedData, null, 2)).toString('base64');
       
       const updatePayload = {
-        message: `Sync: +${newApps.length} new (kept all versions) - Auto Tag V3 Pro`,
+        message: `Sync: +${newApps.length} new (kept all versions) - Auto Tag V2`,
         content: newContent,
         branch: 'main'
       };
@@ -281,282 +286,92 @@ export default async function handler(req, res) {
   }
 }
 
-// ==================== V3 PRO - TAG SYSTEM (CHUẨN APP STORE 100%) ====================
+// ==================== HELPER FUNCTIONS (NÂNG CẤP V2 - LOGIC TÊN APP) ====================
 
 function smartDetectTags(app) {
   const name = (app.name || '').toLowerCase();
   const bundleID = (app.bundleID || '').toLowerCase();
   const desc = (app.localizedDescription || '').toLowerCase();
-  const combined = `${name} ${bundleID} ${desc}`;
+  
+  // --- LỚP 1: KIỂM TRA TÊN APP (CHÍNH XÁC NHẤT) ---
+  // Định nghĩa các từ khóa đặc trưng trong tên App để gán cứng thẻ Tag
+  
+  // 1. GAME
+  const gameNames = [
+    'minecraft', 'roblox', 'lien quan', 'liên quân', 'pubg', 'free fire', 'toc chien', 'tốc chiến', 
+    'clash of clans', 'clash royale', 'genshin', 'honkai', 'play together', 'among us', 'zombie', 
+    'plants vs', 'gta', 'grand theft auto', 'call of duty', 'codm', 'fifa', 'pes', 'dream league', 
+    'asphalt', 'racing', 'mu online', 'audition', 'gunny', 'võ lâm', 'kiếm thế', 'brawl stars',
+    'candy crush', 'subway surfers', 'temple run', 'talking tom', '8 ball', 'shadow fight', 
+    'stickman', 'dragon ball', 'naruto', 'one piece', 'pokemon', 'hill climb', 'block blast',
+    'parking', 'survival', 'arena', 'moba', 'rpg', 'shoot', 'sniper', 'war', 'battle', 'fight'
+  ];
+  if (gameNames.some(k => name.includes(k))) return ['game'];
 
-  // 🎮 GAMES - Ưu tiên cao nhất
-  const gamePatterns = {
-    // Mobile Games nổi tiếng
-    exact: [
-      'minecraft', 'roblox', 'pubg', 'free fire', 'freefire', 'genshin impact', 
-      'honkai', 'call of duty', 'cod mobile', 'fifa', 'pes', 'among us',
-      'brawl stars', 'clash of clans', 'clash royale', 'gta', 'grand theft auto',
-      'asphalt', 'need for speed', 'subway surfers', 'temple run', 'candy crush',
-      '8 ball pool', 'shadow fight', 'dragon ball', 'naruto', 'one piece', 'pokemon',
-      'geometry dash', 'plants vs zombies', 'angry birds', 'fruit ninja',
-      'hill climb racing', 'jetpack joyride', 'cut the rope', 'doodle jump',
-      'stumble guys', 'fall guys', 'fortnite', 'apex legends', 'valorant',
-      'league of legends', 'dota', 'mobile legends', 'mlbb', 'arena of valor',
-      'liên quân', 'lien quan', 'tốc chiến', 'toc chien', 'võ lâm', 'vo lam',
-      'gunny', 'audition', 'mu origin', 'blade & soul', 'crossfire', 'counter strike'
-    ],
-    // Game genres & keywords
-    keywords: [
-      'game', 'play', 'gaming', 'racing', 'shooter', 'shooting', 'battle',
-      'rpg', 'mmorpg', 'moba', 'fps', 'tps', 'strategy', 'arcade', 'puzzle',
-      'adventure', 'action', 'simulation', 'casual', 'sports', 'fighting',
-      'zombie', 'war', 'survival', 'craft', 'build', 'sandbox', 'multiplayer',
-      'online game', 'offline game', 'io game', 'battle royale', 'tower defense',
-      'stick', 'warrior', 'hero', 'legend', 'quest', 'dungeon', 'arena'
-    ]
-  };
+  // 2. SOCIAL
+  const socialNames = [
+    'facebook', 'messenger', 'instagram', 'threads', 'twitter', 'tweet', 'x', 'tiktok', 'douyin',
+    'zalo', 'telegram', 'whatsapp', 'viber', 'skype', 'discord', 'wechat', 'qq', 'snapchat', 
+    'tinder', 'bumble', 'dating', 'hẹn hò', 'pinterest', 'reddit', 'tumblr', 'linkedin'
+  ];
+  if (socialNames.some(k => name.includes(k))) return ['Social'];
 
-  if (gamePatterns.exact.some(k => name.includes(k))) return ['game'];
-  if (gamePatterns.keywords.some(k => combined.includes(k))) {
-    // Double check không phải app khác
-    if (!combined.includes('video game news') && !combined.includes('game guide')) {
-      return ['game'];
-    }
+  // 3. PHOTO & VIDEO
+  const photoNames = [
+    'youtube', 'capcut', 'picsart', 'lightroom', 'photoshop', 'camera', 'b612', 'soda', 'ulike', 
+    'snow', 'foodie', 'vsco', 'snapseed', 'facetune', 'faceapp', 'remini', 'canva', 'instagram layout',
+    'kuji', 'dazz', 'nomo', 'wink', 'meitu', 'xingtu', 'epik', 'video', 'editor', 'photo', 'film', 
+    'cinema', 'netflix', 'hbo', 'disney', 'vtv', 'fpt play', 'vieon', 'galaxy play', 'tv360'
+  ];
+  if (photoNames.some(k => name.includes(k))) return ['Photo/Video'];
+
+  // 4. MUSIC
+  const musicNames = [
+    'spotify', 'zing mp3', 'naccuatui', 'nhaccuatui', 'soundcloud', 'apple music', 'shazam', 
+    'deezer', 'tidal', 'amazon music', 'youtube music', 'piano', 'guitar', 'drum', 'dj', 'mixer', 'mp3'
+  ];
+  if (musicNames.some(k => name.includes(k))) return ['music'];
+
+  // 5. PRODUCTIVITY
+  const productivityNames = [
+    'word', 'excel', 'powerpoint', 'office', 'docs', 'sheet', 'slide', 'pdf', 'scanner', 
+    'zoom', 'teams', 'meet', 'classroom', 'duolingo', 'elsa', 'quizlet', 'dictionary', 
+    'từ điển', 'dịch', 'translate', 'calculator', 'calendar', 'note', 'ghi chú', 'notion', 'goodnotes'
+  ];
+  if (productivityNames.some(k => name.includes(k))) return ['Productivity'];
+
+  // 6. UTILITY
+  const utilityNames = [
+    'vpn', '1.1.1.1', 'adblock', 'wifi', 'speedtest', 'file', 'zip', 'rar', 'browser', 'chrome', 
+    'firefox', 'coccoc', 'edge', 'safari', 'google', 'map', 'grab', 'be', 'gojek', 'shopee', 
+    'lazada', 'tiki', 'banking', 'momo', 'zalopay', 'viettel', 'vina', 'mobi', '4g', 'esim'
+  ];
+  if (utilityNames.some(k => name.includes(k))) return ['Utility'];
+
+
+  // --- LỚP 2: KIỂM TRA BUNDLE ID ---
+  if (bundleID.includes('.game') || bundleID.includes('supercell') || bundleID.includes('garena') || bundleID.includes('riot')) {
+    return ['Game'];
+  }
+  if (bundleID.includes('camera') || bundleID.includes('photo') || bundleID.includes('video')) {
+    return ['Photo/Video'];
   }
 
-  // 📱 SOCIAL NETWORKING
-  const socialPatterns = {
-    exact: [
-      'facebook', 'messenger', 'instagram', 'threads', 'whatsapp', 'telegram',
-      'twitter', 'x', 'tiktok', 'douyin', 'snapchat', 'reddit', 'discord',
-      'zalo', 'viber', 'wechat', 'qq', 'line', 'kakaotalk', 'signal',
-      'skype', 'zoom', 'teams', 'google meet', 'facetime', 'imo',
-      'linkedin', 'pinterest', 'tumblr', 'vk', 'badoo', 'meetme',
-      'tinder', 'bumble', 'hinge', 'okcupid', 'match', 'grindr', 'tantan'
-    ],
-    keywords: [
-      'social', 'chat', 'messaging', 'dating', 'meet people', 'friends',
-      'community', 'network', 'connect', 'hẹn hò', 'kết bạn', 'nhắn tin'
-    ]
-  };
 
-  if (socialPatterns.exact.some(k => name.includes(k))) return ['social'];
-  if (bundleID.includes('.social') || bundleID.includes('.messenger')) return ['social'];
+  // --- LỚP 3: QUÉT MÔ TẢ (FALLBACK) ---
+  const combinedText = `${name} ${desc}`;
 
-  // 📸 PHOTO & VIDEO
-  const photoVideoPatterns = {
-    exact: [
-      'youtube', 'tiktok', 'instagram', 'capcut', 'inshot', 'videoleap',
-      'picsart', 'lightroom', 'photoshop', 'vsco', 'snapseed', 'canva',
-      'camera', 'b612', 'soda', 'ulike', 'snow', 'foodie', 'epik',
-      'faceapp', 'facetune', 'remini', 'prisma', 'prequel', 'meitu',
-      'kinemeter', 'vllo', 'videoshop', 'splice', 'quik', 'filmic',
-      'procreate', 'adobe premiere', 'final cut', 'davinci',
-      'nomo', 'dazz', 'kuji', 'molotov', 'hypic', 'pixlr', 'polarr'
-    ],
-    keywords: [
-      'photo', 'video', 'camera', 'editor', 'editing', 'filter', 'effect',
-      'selfie', 'beauty', 'retouch', 'collage', 'sticker', 'frame',
-      'film', 'cinema', 'vlog', 'clip', 'movie', 'montage', 'slideshow',
-      'photo editor', 'video editor', 'ảnh', 'hình', 'chỉnh sửa'
-    ]
-  };
-
-  if (photoVideoPatterns.exact.some(k => name.includes(k))) return ['photo & video'];
-  if (bundleID.includes('photo') || bundleID.includes('video') || bundleID.includes('camera')) {
-    return ['photo & video'];
+  if (combinedText.includes('role-playing') || combinedText.includes('arcade') || 
+      combinedText.includes('simulation') || combinedText.includes('strategy game')) {
+    return ['Game'];
   }
 
-  // 🎵 MUSIC
-  const musicPatterns = {
-    exact: [
-      'spotify', 'apple music', 'youtube music', 'soundcloud', 'deezer',
-      'tidal', 'amazon music', 'pandora', 'shazam', 'musixmatch',
-      'zing mp3', 'nhaccuatui', 'nct', 'keeng', 'deezer vietnam',
-      'garage band', 'fl studio', 'bandlab', 'groovepad', 'drum pad'
-    ],
-    keywords: [
-      'music', 'audio', 'song', 'playlist', 'streaming', 'radio',
-      'podcast', 'mp3', 'player', 'sound', 'beat', 'melody',
-      'piano', 'guitar', 'drum', 'dj', 'mixer', 'synthesizer',
-      'nhạc', 'âm nhạc', 'bài hát'
-    ]
-  };
-
-  if (musicPatterns.exact.some(k => name.includes(k))) return ['music'];
-  if (bundleID.includes('music') || bundleID.includes('audio')) return ['music'];
-
-  // 🎬 ENTERTAINMENT
-  const entertainmentPatterns = {
-    exact: [
-      'netflix', 'disney+', 'hbo', 'prime video', 'hulu', 'paramount',
-      'apple tv', 'peacock', 'crunchyroll', 'funimation', 'viu',
-      'fpt play', 'vieon', 'galaxy play', 'tv360', 'vtv go',
-      'pops', 'fim+', 'iq', 'wetv', 'viki', 'animax', 'cartoon'
-    ],
-    keywords: [
-      'streaming', 'tv', 'movie', 'film', 'series', 'show', 'drama',
-      'anime', 'cartoon', 'entertainment', 'watch', 'video on demand',
-      'phim', 'truyền hình', 'giải trí'
-    ]
-  };
-
-  if (entertainmentPatterns.exact.some(k => name.includes(k))) return ['entertainment'];
-
-  // 📰 NEWS & MAGAZINES
-  const newsPatterns = {
-    keywords: [
-      'news', 'newspaper', 'magazine', 'journal', 'press', 'media',
-      'tin tức', 'báo', 'tạp chí', 'vnexpress', 'zing news', 'kenh14',
-      'tuoi tre', 'thanh nien', 'dantri', '24h', 'bao moi'
-    ]
-  };
-
-  if (newsPatterns.keywords.some(k => combined.includes(k))) return ['news'];
-
-  // 🛍️ SHOPPING & FOOD
-  const shoppingPatterns = {
-    exact: [
-      'shopee', 'lazada', 'tiki', 'sendo', 'grab', 'gojek', 'be',
-      'now', 'foody', 'baemin', 'loship', 'ahamove', 'fastgo',
-      'amazon', 'ebay', 'alibaba', 'etsy', 'shein', 'zalora', 'temu',
-      'grab food', 'shopee food', 'now food', 'gofood'
-    ],
-    keywords: [
-      'shopping', 'shop', 'store', 'mall', 'market', 'buy', 'sell',
-      'ecommerce', 'delivery', 'food delivery', 'order food',
-      'mua sắm', 'đặt hàng', 'giao hàng'
-    ]
-  };
-
-  if (shoppingPatterns.exact.some(k => name.includes(k))) return ['shopping'];
-
-  // 💰 FINANCE
-  const financePatterns = {
-    keywords: [
-      'bank', 'banking', 'finance', 'payment', 'wallet', 'pay',
-      'momo', 'zalopay', 'vnpay', 'viettel money', 'viettelpay',
-      'vietcombank', 'techcombank', 'acb', 'tpbank', 'mb bank',
-      'crypto', 'bitcoin', 'trading', 'stock', 'invest',
-      'ngân hàng', 'tài chính', 'thanh toán', 'ví điện tử'
-    ]
-  };
-
-  if (financePatterns.keywords.some(k => combined.includes(k))) return ['finance'];
-
-  // 🏃 HEALTH & FITNESS
-  const healthPatterns = {
-    keywords: [
-      'health', 'fitness', 'workout', 'exercise', 'gym', 'yoga',
-      'running', 'cycling', 'meditation', 'sleep', 'diet', 'nutrition',
-      'calorie', 'step', 'tracker', 'sức khỏe', 'tập luyện'
-    ]
-  };
-
-  if (healthPatterns.keywords.some(k => combined.includes(k))) return ['health & fitness'];
-
-  // 📚 EDUCATION
-  const educationPatterns = {
-    keywords: [
-      'education', 'learning', 'study', 'course', 'class', 'lesson',
-      'duolingo', 'khan academy', 'coursera', 'udemy', 'skillshare',
-      'elsa', 'cake', 'busuu', 'babbel', 'quizlet', 'photomath',
-      'học', 'giáo dục', 'từ điển', 'dictionary', 'translate', 'dịch'
-    ]
-  };
-
-  if (educationPatterns.keywords.some(k => combined.includes(k))) return ['education'];
-
-  // 📖 BOOKS & REFERENCE
-  const booksPatterns = {
-    keywords: [
-      'book', 'ebook', 'reader', 'reading', 'library', 'novel',
-      'kindle', 'wattpad', 'webtoon', 'manga', 'comic',
-      'sách', 'truyện', 'đọc', 'waka', 'pops comic'
-    ]
-  };
-
-  if (booksPatterns.keywords.some(k => combined.includes(k))) return ['books'];
-
-  // 🚗 NAVIGATION & TRAVEL
-  const navigationPatterns = {
-    keywords: [
-      'map', 'maps', 'navigation', 'gps', 'travel', 'trip',
-      'hotel', 'flight', 'booking', 'airbnb', 'agoda',
-      'google maps', 'waze', 'grab', 'be', 'uber',
-      'bản đồ', 'du lịch', 'đặt phòng'
-    ]
-  };
-
-  if (navigationPatterns.keywords.some(k => combined.includes(k))) return ['navigation'];
-
-  // 💼 PRODUCTIVITY & BUSINESS
-  const productivityPatterns = {
-    keywords: [
-      'office', 'word', 'excel', 'powerpoint', 'pdf', 'document',
-      'note', 'notes', 'notebook', 'todo', 'task', 'calendar',
-      'email', 'gmail', 'outlook', 'zoom', 'teams', 'meet',
-      'slack', 'notion', 'evernote', 'onenote', 'goodnotes',
-      'productivity', 'business', 'work', 'văn phòng'
-    ]
-  };
-
-  if (productivityPatterns.keywords.some(k => combined.includes(k))) return ['productivity'];
-
-  // 🛠️ UTILITIES
-  const utilityPatterns = {
-    keywords: [
-      'utility', 'tool', 'vpn', 'cleaner', 'battery', 'wifi',
-      'file manager', 'scanner', 'qr', 'flashlight', 'calculator',
-      'weather', 'clock', 'alarm', 'compass', 'speedtest',
-      'adblock', 'browser', 'chrome', 'firefox', 'safari',
-      'tiện ích', 'công cụ'
-    ]
-  };
-
-  if (utilityPatterns.keywords.some(k => combined.includes(k))) return ['utilities'];
-
-  // 🎨 GRAPHICS & DESIGN
-  const designPatterns = {
-    keywords: [
-      'design', 'graphic', 'draw', 'paint', 'sketch', 'illustrator',
-      'procreate', 'adobe', 'figma', 'canva', 'logo', 'poster',
-      'thiết kế', 'vẽ', 'họa'
-    ]
-  };
-
-  if (designPatterns.keywords.some(k => combined.includes(k))) return ['graphics & design'];
-
-  // 👶 KIDS & FAMILY
-  const kidsPatterns = {
-    keywords: [
-      'kids', 'children', 'baby', 'toddler', 'family', 'parent',
-      'cartoon', 'coloring', 'abc', 'learning for kids',
-      'trẻ em', 'bé', 'gia đình'
-    ]
-  };
-
-  if (kidsPatterns.keywords.some(k => combined.includes(k))) return ['kids'];
-
-  // 🏠 LIFESTYLE
-  const lifestylePatterns = {
-    keywords: [
-      'lifestyle', 'home', 'diy', 'recipe', 'cooking', 'food',
-      'fashion', 'style', 'beauty', 'makeup', 'salon',
-      'lối sống', 'nấu ăn', 'thời trang', 'làm đẹp'
-    ]
-  };
-
-  if (lifestylePatterns.keywords.some(k => combined.includes(k))) return ['lifestyle'];
-
-  // 🌐 DEVELOPER TOOLS (ít khi có trong IPA consumer)
-  if (bundleID.includes('developer') || bundleID.includes('xcode') || 
-      combined.includes('coding') || combined.includes('programming')) {
-    return ['developer tools'];
+  if (combinedText.includes('editing tool') || combinedText.includes('video editor') || 
+      combinedText.includes('photo editor')) {
+    return ['Photo/Video'];
   }
 
-  // ⚙️ DEFAULT: UTILITIES (nếu không match gì)
-  return ['utilities'];
+  return ['Utility'];
 }
 
 function smartDetectBadge(app) {
@@ -564,7 +379,6 @@ function smartDetectBadge(app) {
   const desc = (app.localizedDescription || '').toLowerCase();
   const versionDate = app.versionDate;
   
-  // 🆕 NEW BADGE - Apps mới trong 7 ngày
   let isRecent = false;
   if (versionDate) {
     try {
@@ -579,31 +393,18 @@ function smartDetectBadge(app) {
   
   if (isRecent) return 'new';
   
-  // 🔥 TRENDING - Apps hot nhất
   const trendingKeywords = [
-    'spotify', 'youtube', 'tiktok', 'instagram', 'facebook', 'threads',
-    'whatsapp', 'telegram', 'netflix', 'disney', 'capcut',
-    'minecraft', 'roblox', 'genshin', 'honkai', 'pubg', 'free fire',
-    'gta', 'call of duty', 'fifa', 'brawl stars'
+    'spotify', 'youtube', 'tiktok', 'instagram', 'facebook',
+    'whatsapp', 'telegram', 'netflix', 'minecraft', 'roblox', 'gta'
   ];
   
   if (trendingKeywords.some(keyword => name.includes(keyword))) {
     return Math.random() > 0.5 ? 'trending' : 'top';
   }
   
-  // 💎 VIP - Apps Premium/Pro
-  const premiumKeywords = [
-    'premium', 'pro', 'plus', 'gold', 'vip', 'elite', 'ultimate',
-    'unlocked', 'mod', 'hack', 'full', 'paid', 'cracked'
-  ];
-  
+  const premiumKeywords = ['premium', 'pro', 'plus', 'gold', 'vip', 'unlocked', 'mod'];
   if (premiumKeywords.some(keyword => desc.includes(keyword) || name.includes(keyword))) {
     return 'vip';
-  }
-  
-  // ⭐ TOP - Random cho apps còn lại (10% chance)
-  if (Math.random() > 0.9) {
-    return 'top';
   }
   
   return null;

@@ -1,27 +1,15 @@
 [
   {
-    "id": "keyvipfree",
-    "key": "VN-VO-DICH",
-    "createdAt": "2025-12-02T21:37:37.690715",
-    "expiresAt": "2026-05-31T21:37:37.690756",
-    "maxUses": null,
-    "currentUses": 4,
-    "active": true,
-    "createdBy": "user",
-    "notes": "free",
-    "lastUsedAt": "2025-12-06T04:55:08.491Z"
-  },
-  {
     "id": "key_1764762438_5624",
     "key": "7CWW-IQXN-OPE7-D3MP",
     "createdAt": "2025-12-03T18:47:18.007784",
     "expiresAt": "2026-01-02T18:47:18.007824",
     "maxUses": null,
-    "currentUses": 28,
+    "currentUses": 26,
     "active": true,
     "createdBy": "telegram_bot",
     "notes": "30 days, ∞ uses",
-    "lastUsedAt": "2025-12-11T10:30:27.522Z"
+    "lastUsedAt": "2025-12-09T12:43:39.656Z"
   },
   {
     "id": "key_1764686257_2814",
@@ -29,11 +17,11 @@
     "createdAt": "2025-12-02T21:37:37.690715",
     "expiresAt": "2026-05-31T21:37:37.690756",
     "maxUses": null,
-    "currentUses": 4,
+    "currentUses": 3,
     "active": true,
     "createdBy": "telegram_bot",
     "notes": "exmonster",
-    "lastUsedAt": "2025-12-06T04:55:08.491Z"
+    "lastUsedAt": "2025-12-04T08:47:24.050Z"
   },
   {
     "id": "key_1763660593_3303",
@@ -41,10 +29,10 @@
     "createdAt": "2025-11-21T00:43:13.570172",
     "expiresAt": null,
     "maxUses": null,
-    "currentUses": 132,
+    "currentUses": 60,
     "active": true,
     "createdBy": "telegram_bot",
     "notes": "∞ days, ∞ uses",
-    "lastUsedAt": "2025-12-26T07:51:06.427Z"
+    "lastUsedAt": "2025-12-24T03:47:49.968Z"
   }
 ]

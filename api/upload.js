@@ -31,8 +31,8 @@ export default async function handler(req, res) {
 
     // GitHub configuration từ environment variables
     const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
-    const GITHUB_OWNER = process.env.GITHUB_OWNER || 'abcxyznd';
-    const GITHUB_REPO = process.env.GITHUB_REPO || 'vipapp';
+    const GITHUB_OWNER = process.env.GITHUB_OWNER || 'Cuongqtx11';
+    const GITHUB_REPO = process.env.GITHUB_REPO || 'app_vip';
     
     // 🎯 FIX LỖI ĐƯỜNG DẪN: ĐỊNH DẠNG LẠI FILE_PATH DỰA TRÊN LOẠI UPLOAD
     let FILE_PATH;
