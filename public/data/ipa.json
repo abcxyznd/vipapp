@@ -1,5 +1,149 @@
 [
   {
+    "id": "ipa-com.fluidtouch.noteshelf3-6.3",
+    "type": "ipa",
+    "name": "Noteshelf3",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/com.fluidtouch.noteshelf3.png",
+    "desc": "Injected with Premium",
+    "tags": [
+      "productivity"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/03-01-2026/Noteshelf3_6.3_Premium_%40thisismanpreets_apptesters.org.ipa",
+    "version": "6.3",
+    "developer": "khomodvip",
+    "date": "2026-01-03",
+    "source": "apptesters",
+    "bundleID": "com.fluidtouch.noteshelf3",
+    "lastSync": "2026-01-03T11:08:16.778Z"
+  },
+  {
+    "id": "ipa-app.mmap.mobile-2.7.6",
+    "type": "ipa",
+    "name": "Soundmap",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/app.mmap.mobile.png",
+    "desc": "Injected with Pro",
+    "tags": [
+      "navigation"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/03-01-2026/Soundmap_2.7.6_Pro_%40thisismanpreets_apptesters.org.ipa",
+    "version": "2.7.6",
+    "developer": "khomodvip",
+    "date": "2026-01-03",
+    "source": "apptesters",
+    "bundleID": "app.mmap.mobile",
+    "lastSync": "2026-01-03T11:08:16.779Z"
+  },
+  {
+    "id": "ipa-app.renovateai-4.4.70",
+    "type": "ipa",
+    "name": "RenovateAI",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/app.renovateai.png",
+    "desc": "Injected with Pro",
+    "tags": [
+      "utilities"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/03-01-2026/RenovateAI_4.4.70_Pro_%40thisismanpreets_apptesters.org.ipa",
+    "version": "4.4.70",
+    "developer": "khomodvip",
+    "date": "2026-01-03",
+    "source": "apptesters",
+    "bundleID": "app.renovateai",
+    "lastSync": "2026-01-03T11:08:16.780Z"
+  },
+  {
+    "id": "ipa-com.grey.swiftcamera-2.5.49",
+    "type": "ipa",
+    "name": "NoFusion",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/com.grey.swiftcamera.png",
+    "desc": "Injected with Pro",
+    "tags": [
+      "photo & video"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/03-01-2026/NoFusion_2.5.49_Pro_%40thisismanpreets_apptesters.org.ipa",
+    "version": "2.5.49",
+    "developer": "khomodvip",
+    "date": "2026-01-03",
+    "source": "apptesters",
+    "bundleID": "com.grey.swiftcamera",
+    "lastSync": "2026-01-03T11:08:16.780Z"
+  },
+  {
+    "id": "ipa-net.quochuywdm.collanote496-4.0.4",
+    "type": "ipa",
+    "name": "CollaNote",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/net.quochuywdm.collanote496.png",
+    "desc": "Injected with Pro",
+    "tags": [
+      "productivity"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/03-01-2026/CollaNote_4.0.4_Pro_%40thisismanpreets_apptesters.org.ipa",
+    "version": "4.0.4",
+    "developer": "khomodvip",
+    "date": "2026-01-03",
+    "source": "apptesters",
+    "bundleID": "net.quochuywdm.collanote496",
+    "lastSync": "2026-01-03T11:08:16.780Z"
+  },
+  {
+    "id": "ipa-PHCXZHD53T.com.enki.insights-2.40.4",
+    "type": "ipa",
+    "name": "Enki",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/PHCXZHD53T.com.enki.insights.png",
+    "desc": "Injected with Premium",
+    "tags": [
+      "utilities"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/03-01-2026/Enki_2.40.4_Premium_%40thisismanpreets_apptesters.org.ipa",
+    "version": "2.40.4",
+    "developer": "khomodvip",
+    "date": "2026-01-03",
+    "source": "apptesters",
+    "bundleID": "PHCXZHD53T.com.enki.insights",
+    "lastSync": "2026-01-03T11:08:16.780Z"
+  },
+  {
+    "id": "ipa-health.sleep.sounds.tracker.alarm.calm-3.2.9",
+    "type": "ipa",
+    "name": "ShutEye",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/health.sleep.sounds.tracker.alarm.calm.png",
+    "desc": "Injected with Premium",
+    "tags": [
+      "health & fitness"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/03-01-2026/ShutEye_3.2.9_Premium_%40thisismanpreets_apptesters.org.ipa",
+    "version": "3.2.9",
+    "developer": "khomodvip",
+    "date": "2026-01-03",
+    "source": "apptesters",
+    "bundleID": "health.sleep.sounds.tracker.alarm.calm",
+    "lastSync": "2026-01-03T11:08:16.780Z"
+  },
+  {
+    "id": "ipa-PhotoEditor.PhotoCollage.inCollage-2.2.13",
+    "type": "ipa",
+    "name": "InCollage",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/PhotoEditor.PhotoCollage.inCollage.png",
+    "desc": "Injected with Premium",
+    "tags": [
+      "photo & video"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/03-01-2026/InCollage_2.2.13_Premium_%40thisismanpreets_apptesters.org.ipa",
+    "version": "2.2.13",
+    "developer": "khomodvip",
+    "date": "2026-01-03",
+    "source": "apptesters",
+    "bundleID": "PhotoEditor.PhotoCollage.inCollage",
+    "lastSync": "2026-01-03T11:08:16.780Z"
+  },
+  {
     "id": "ipa-uni.cbum-4.1.25",
     "type": "ipa",
     "name": "Stndrd",
