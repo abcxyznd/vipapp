@@ -1,5 +1,41 @@
 [
   {
+    "id": "ipa-com.mangacrush.ios-4.12",
+    "type": "ipa",
+    "name": "Tachimanga",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/com.mangacrush.ios.png",
+    "desc": "Injected with Premium",
+    "tags": [
+      "books"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/11-01-2026/Tachimanga_4.12_Premium_%40thisismanpreets_apptesters.org.ipa",
+    "version": "4.12",
+    "developer": "khomodvip",
+    "date": "2026-01-11",
+    "source": "apptesters",
+    "bundleID": "com.mangacrush.ios",
+    "lastSync": "2026-01-11T05:32:32.035Z"
+  },
+  {
+    "id": "ipa-com.enjoy.VideoShow-6.0.00",
+    "type": "ipa",
+    "name": "VideoShow",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/com.enjoy.VideoShow.png",
+    "desc": "Injected with VIP",
+    "tags": [
+      "photo & video"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/11-01-2026/VideoShow_6.0.00_VIP_%40thisismanpreets_apptesters.org.ipa",
+    "version": "6.0.00",
+    "developer": "khomodvip",
+    "date": "2026-01-11",
+    "source": "apptesters",
+    "bundleID": "com.enjoy.VideoShow",
+    "lastSync": "2026-01-11T05:32:32.035Z"
+  },
+  {
     "id": "ipa-com.kinemaster.kios-8.0.13",
     "type": "ipa",
     "name": "KineMaster",
