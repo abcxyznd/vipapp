@@ -149,7 +149,7 @@ export function initTelegramBot() {
       }
 
       // Search in vpn_data.json
-      const vpnResponse = await fetch(`${API_URL}/public/data/vpn_data.json`);
+      const vpnResponse = await fetch(`${API_URL}/data/vpn_data.json`);
       const vpnData = await vpnResponse.json();
       
       if (Array.isArray(vpnData)) {
