@@ -5,7 +5,7 @@ import fetch from 'node-fetch';
 export function initTelegramBot() {
   const BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
   const ADMIN_IDS = process.env.TELEGRAM_ADMIN_IDS?.split(',').map(id => parseInt(id.trim())) || [];
-  const API_URL = process.env.API_URL || 'https://vipapp-kappa.vercel.app';
+  const API_URL = process.env.API_URL || 'https://cheatlibrary.xyz';
 
   if (!BOT_TOKEN) {
     console.log('⚠️  TELEGRAM_BOT_TOKEN not found, bot disabled');
