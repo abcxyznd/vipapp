@@ -498,7 +498,7 @@ export function initTelegramBot() {
     // Main menu navigation
     if (data === 'back_main') {
       const welcomeMsg = isAdmin(userId)
-        ? `👋 Xin chào ${msg.from.first_name}\n\n🔑 Mình là bot quản lý Key & VPN VIP thuộc ${API_URL} \n\nChọn chức năng bên dưới:`
+        ? `👋 Xin chào ${query.from.first_name}\n\n🔑 Mình là bot quản lý Key & VPN VIP thuộc ${API_URL} \n\nChọn chức năng bên dưới:`
         : '👋 Chào mừng!\n\n🔍 Bạn có thể tra cứu đơn hàng đã thanh toán bằng nút bên dưới.';
       
       bot.editMessageText(welcomeMsg, {
