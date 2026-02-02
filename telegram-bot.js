@@ -20,7 +20,25 @@ export function initTelegramBot() {
   }
 
   // Main menu with inline keyboard
-  function getMainMenu() {
+  function getMainMenu(userId) {
+    const buttons = [
+      [{ text: '🔍 Tra Cứu Đơn Hàng', callback_data: 'lookup_order' }]
+    ];
+    
+    // Add admin button only for admins
+    if (isAdmin(userId)) {
+      buttons[0].push({ text: '👨‍💼 Lệnh Admin', callback_data: 'admin_menu' });
+    }
+    
+    return {
+      reply_markup: {
+        inline_keyboard: buttons
+      }
+    };
+  }
+
+  // Admin menu
+  function getAdminMenu() {
     return {
       reply_markup: {
         inline_keyboard: [
@@ -33,7 +51,8 @@ export function initTelegramBot() {
             { text: '📊 Thống Kê', callback_data: 'stats' }
           ],
           [
-            { text: '❓ Hướng Dẫn', callback_data: 'help' }
+            { text: '❓ Hướng Dẫn', callback_data: 'help' },
+            { text: '🔙 Quay Lại', callback_data: 'back_main' }
           ]
         ]
       }
@@ -45,18 +64,74 @@ export function initTelegramBot() {
     const chatId = msg.chat.id;
     const userId = msg.from.id;
 
-    if (!isAdmin(userId)) {
-      bot.sendMessage(chatId, '❌ Bạn không có quyền sử dụng bot này!');
-      return;
-    }
+    const welcomeMsg = isAdmin(userId)
+      ? '👋 Xin chào Admin!\n\n🔑 Bot quản lý Key Download VIP\n\nChọn chức năng bên dưới:'
+      : '👋 Chào mừng!\n\n🔍 Bạn có thể tra cứu đơn hàng đã thanh toán bằng nút bên dưới.';
 
-    bot.sendMessage(
-      chatId,
-      '👋 Xin chào Admin!\n\n' +
-      '🔑 Bot quản lý Key Download VIP\n\n' +
-      'Chọn chức năng bên dưới:',
-      getMainMenu()
-    );
+    bot.sendMessage(chatId, welcomeMsg, getMainMenu(userId));
+  });
+
+  // Lookup order command
+  bot.onText(/\/tracuu (.+)/, async (msg, match) => {
+    const chatId = msg.chat.id;
+    const transactionCode = match[1].trim().toUpperCase();
+
+    bot.sendMessage(chatId, '⏳ Đang tra cứu...');
+
+    try {
+      const response = await fetch(`${API_URL}/api/keys/list`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ telegramSecret: BOT_TOKEN })
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        const foundKey = data.keys.find(k => k.transaction_code === transactionCode);
+
+        if (foundKey) {
+          const status = foundKey.active ? '✅ Đang hoạt động' : '❌ Đã hết hạn';
+          const expires = foundKey.expiresAt 
+            ? new Date(foundKey.expiresAt).toLocaleDateString('vi-VN', { 
+                year: 'numeric', month: 'long', day: 'numeric',
+                hour: '2-digit', minute: '2-digit'
+              })
+            : '∞ Vĩnh viễn';
+          const uses = foundKey.maxUses 
+            ? `${foundKey.currentUses}/${foundKey.maxUses} lượt`
+            : '∞ Không giới hạn';
+          const packageName = foundKey.package || 'Không xác định';
+          
+          const message = 
+            `🎫 **Thông Tin Đơn Hàng**\n\n` +
+            `📦 Gói: **${packageName}**\n` +
+            `🔑 Key: \`${foundKey.key}\`\n` +
+            `${status}\n\n` +
+            `⏰ Hạn sử dụng: ${expires}\n` +
+            `👥 Đã dùng: ${uses}\n` +
+            `📅 Ngày mua: ${new Date(foundKey.createdAt).toLocaleDateString('vi-VN', { 
+              year: 'numeric', month: 'long', day: 'numeric',
+              hour: '2-digit', minute: '2-digit'
+            })}\n\n` +
+            `💡 *Lưu ý: Copy key bằng cách chạm vào mã key*`;
+
+          bot.sendMessage(chatId, message, { parse_mode: 'Markdown' });
+        } else {
+          bot.sendMessage(
+            chatId,
+            '❌ Không tìm thấy đơn hàng!\n\n' +
+            '📝 Vui lòng kiểm tra lại mã giao dịch.\n' +
+            'Mã giao dịch là nội dung chuyển khoản khi bạn thanh toán.'
+          );
+        }
+      } else {
+        bot.sendMessage(chatId, '❌ Lỗi hệ thống, vui lòng thử lại sau!');
+      }
+    } catch (error) {
+      console.error('Error looking up order:', error);
+      bot.sendMessage(chatId, '❌ Không thể kết nối đến hệ thống!');
+    }
   });
 
   // Create key command
@@ -97,14 +172,14 @@ export function initTelegramBot() {
           `⏰ Thời hạn: ${daysText}\n` +
           `👥 Giới hạn: ${usesText}\n` +
           `📅 Tạo lúc: ${new Date(data.createdAt).toLocaleString('vi-VN')}`,
-          { parse_mode: 'Markdown', ...getMainMenu() }
+          { parse_mode: 'Markdown', ...getAdminMenu() }
         );
       } else {
-        bot.sendMessage(chatId, `❌ Lỗi: ${data.error}`, getMainMenu());
+        bot.sendMessage(chatId, `❌ Lỗi: ${data.error}`, getAdminMenu());
       }
     } catch (error) {
       console.error('Error creating key:', error);
-      bot.sendMessage(chatId, '❌ Không thể kết nối đến API!', getMainMenu());
+      bot.sendMessage(chatId, '❌ Không thể kết nối đến API!', getAdminMenu());
     }
   });
 
@@ -130,97 +205,170 @@ export function initTelegramBot() {
       if (data.success) {
         if (data.keys.length === 0) {
           bot.sendMessage(chatId, '📋 Không có key nào!', getMainMenu());
-          return;
-        }
+    // Answer callback query first
+    bot.answerCallbackQuery(query.id);
 
-        let message = `📋 Danh sách Keys (${data.keys.length}):\n\n`;
-        
-        data.keys.slice(0, 10).forEach((key, index) => {
-          const status = key.active ? '✅' : '❌';
-          const expires = key.expiresAt 
-            ? new Date(key.expiresAt).toLocaleDateString('vi-VN')
-            : '∞';
-          const uses = key.maxUses ? `${key.currentUses}/${key.maxUses}` : '∞';
-          
-          message += `${index + 1}. ${status} \`${key.key}\`\n`;
-          message += `   ⏰ ${expires} | 👥 ${uses}\n\n`;
-        });
-
-        if (data.keys.length > 10) {
-          message += `\n... và ${data.keys.length - 10} key khác`;
-        }
-
-        bot.sendMessage(chatId, message, { parse_mode: 'Markdown', ...getMainMenu() });
-      } else {
-        bot.sendMessage(chatId, `❌ Lỗi: ${data.error}`, getMainMenu());
-      }
-    } catch (error) {
-      console.error('Error listing keys:', error);
-      bot.sendMessage(chatId, '❌ Không thể kết nối đến API!', getMainMenu());
-    }
-  });
-
-  // Delete key command
-  bot.onText(/\/delete (.+)/, async (msg, match) => {
-    const chatId = msg.chat.id;
-    const userId = msg.from.id;
-
-    if (!isAdmin(userId)) {
-      bot.sendMessage(chatId, '❌ Bạn không có quyền sử dụng lệnh này!');
+    // Main menu navigation
+    if (data === 'back_main') {
+      const welcomeMsg = isAdmin(userId)
+        ? '👋 Xin chào Admin!\n\n🔑 Bot quản lý Key Download VIP\n\nChọn chức năng bên dưới:'
+        : '👋 Chào mừng!\n\n🔍 Bạn có thể tra cứu đơn hàng đã thanh toán bằng nút bên dưới.';
+      
+      bot.editMessageText(welcomeMsg, {
+        chat_id: chatId,
+        message_id: query.message.message_id,
+        ...getMainMenu(userId)
+      });
       return;
     }
 
-    const keyToDelete = match[1].trim();
-
-    try {
-      const response = await fetch(`${API_URL}/api/keys/delete`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          telegramSecret: BOT_TOKEN,
-          key: keyToDelete
-        })
-      });
-
-      const data = await response.json();
-
-      if (data.success) {
-        bot.sendMessage(
-          chatId,
-          `✅ Đã xóa key: \`${keyToDelete}\``,
-          { parse_mode: 'Markdown', ...getMainMenu() }
-        );
+    // Lookup order
+    if (data === 'lookup_order') {
+      bot.sendMessage(
+        chatId,AdminMenu() });
       } else {
-        bot.sendMessage(chatId, `❌ Lỗi: ${data.error}`, getMainMenu());
+        bot.sendMessage(chatId, `❌ Lỗi: ${data.error}`, getAdminMenu());
       }
     } catch (error) {
-      console.error('Error deleting key:', error);
-      bot.sendMessage(chatId, '❌ Không thể kết nối đến API!', getMainMenu());
+      console.error('Error listing keys:', error);
+      bot.sendMessage(chatId, '❌ Không thể kết nối đến API!', getAdm
+      );
+      return;
     }
-  });
 
-  // Handle callback queries (inline button clicks)
-  bot.on('callback_query', async (query) => {
-    const chatId = query.message.chat.id;
-    const userId = query.from.id;
-    const data = query.data;
+    // Admin menu
+    if (data === 'admin_menu') {
+      if (!isAdmin(userId)) {
+        bot.answerCallbackQuery(query.id, { text: '❌ Bạn không có quyền!', show_alert: true });
+        return;
+      }
 
+      bot.editMessageText(
+        '👨‍💼 **Menu Admin**\n\nChọn chức năng quản lý:',
+        {
+          chat_id: chatId,
+          message_id: query.message.message_id,
+          parse_mode: 'Markdown',
+          ...getAdminMenu()
+        }
+      );
+      return;
+    }
+
+    // Admin-only actions
     if (!isAdmin(userId)) {
       bot.answerCallbackQuery(query.id, { text: '❌ Bạn không có quyền!', show_alert: true });
       return;
     }
 
-    // Answer callback query first
-    bot.answerCallbackQuery(query.id);
-
     if (data === 'create_key') {
       bot.sendMessage(
+        chatId,AdminMenu() }
+        );
+      } else {
+        bot.sendMessage(chatId, `❌ Lỗi: ${data.error}`, getAdminMenu());
+      }
+    } catch (error) {
+      console.error('Error deleting key:', error);
+      bot.sendMessage(chatId, '❌ Không thể kết nối đến API!', getAdm
+      );
+    } else if (data === 'list_keys') {
+      bot.sendMessage(chatId, '⏳ Đang tải danh sách keys...');
+      
+      try {
+        const response = await fetch(`${API_URL}/api/keys/list`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ telegramSecret: BOT_TOKEN })
+        });
+
+        const result = await response.json();
+
+        if (result.success) {
+          if (result.keys.length === 0) {
+            bot.sendMessage(chatId, '📋 Không có key nào!', getAdminMenu());
+            return;
+          }
+
+          let message = `📋 Danh sách Keys (${result.keys.length}):\n\n`;
+          
+          result.keys.slice(0, 10).forEach((key, index) => {
+            const status = key.active ? '✅' : '❌';
+            const expires = key.expiresAt 
+              ? new Date(key.expiresAt).toLocaleDateString('vi-VN')
+              : '∞';
+            const uses = key.maxUses ? `${key.currentUses}/${key.maxUses}` : '∞';
+            
+            message += `${index + 1}. ${status} \`${key.key}\`\n`;
+            message += `   ⏰ ${expires} | 👥 ${uses}\n\n`;
+          });
+
+          if (result.keys.length > 10) {
+            message += `\n... và ${result.keys.length - 10} key khác`;
+          }
+
+          bot.sendMessage(chatId, message, { parse_mode: 'Markdown', ...getAdminMenu() });
+        } else {
+          bot.sendMessage(chatId, `❌ Lỗi: ${result.error}`, getAdminMenu());
+        }
+      } catch (error) {
+        console.error('Error listing keys:', error);
+        bot.sendMessage(chatId, '❌ Không thể kết nối đến API!', getAdminMenu());
+      }
+    } else if (data === 'delete_key') {
+      bot.sendMessage(
         chatId,
-        '📝 Tạo Key Mới\n\n' +
-        'Sử dụng lệnh: `/create [days] [uses]`\n\n' +
+        '🗑️ Xóa Key\n\n' +
+        'Sử dụng lệnh: `/delete <key>`\n\n' +
         'Ví dụ:\n' +
-        '• `/create` - Key vĩnh viễn, không giới hạn\n' +
-        '• `/create 7` - Key 7 ngày, không giới hạn lượt\n' +
+        '`/delete ABCD-1234-EFGH-5678`',
+        { parse_mode: 'Markdown' }
+      );
+    } else if (data === 'stats') {
+      try {
+        const response = await fetch(`${API_URL}/api/keys/list`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ telegramSecret: BOT_TOKEN })
+        });
+
+        const result = await response.json();
+
+        if (result.success) {
+          const total = result.keys.length;
+          const active = result.keys.filter(k => k.active).length;
+          const expired = total - active;
+          const totalUses = result.keys.reduce((sum, k) => sum + (k.currentUses || 0), 0);
+          
+          bot.sendMessage(
+            chatId,
+            '📊 **Thống Kê**\n\n' +
+            `📦 Tổng số key: **${total}**\n` +
+            `✅ Đang hoạt động: **${active}**\n` +
+            `❌ Đã hết hạn: **${expired}**\n` +
+            `👥 Tổng lượt dùng: **${totalUses}**`,
+            { parse_mode: 'Markdown', ...getAdminMenu() }
+          );
+        } else {
+          bot.sendMessage(chatId, '❌ Không thể lấy thống kê!', getAdminMenu());
+        }
+      } catch (error) {
+        console.error('Error getting stats:', error);
+        bot.sendMessage(chatId, '❌ Không thể kết nối đến API!', getAdminMenu());
+      }
+    } else if (data === 'help') {
+      bot.sendMessage(
+        chatId,
+        '❓ Hướng Dẫn Sử Dụng\n\n' +
+        '**Lệnh cơ bản:**\n' +
+        '• `/start` - Khởi động bot\n' +
+        '• `/tracuu <mã>` - Tra cứu đơn hàng\n\n' +
+        '**Lệnh Admin:**\n' +
+        '• `/create [days] [uses]` - Tạo key mới\n' +
+        '• `/list` - Xem danh sách keys\n' +
+        '• `/delete <key>` - Xóa key\n\n' +
+        '💡 *Mã giao dịch là nội dung chuyển khoản khi thanh toán.*',
+        { parse_mode: 'Markdown', ...getAdm giới hạn lượt\n' +
         '• `/create 30 100` - Key 30 ngày, tối đa 100 lượt',
         { parse_mode: 'Markdown' }
       );
