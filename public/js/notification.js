@@ -1,4 +1,4 @@
-// notification.js - Modern Toast Notification System
+// notification.js - Ltoasteur-inspired Toast Notification System
 
 // Toast container
 let toastContainer;
@@ -13,8 +13,8 @@ function initToast() {
     }
 }
 
-// Show toast notification
-function showToast(message, type = 'info', duration = 3000) {
+// Show toast notification with title and message
+function showToast(title, message, type = 'info', duration = 4000) {
     initToast();
     
     const toast = document.createElement('div');
@@ -28,27 +28,20 @@ function showToast(message, type = 'info', duration = 3000) {
         info: 'info'
     };
     
-    // Colors for different types
-    const colors = {
-        success: '#10b981',
-        error: '#ef4444',
-        warning: '#f59e0b',
-        info: '#3b82f6'
-    };
-    
     const icon = icons[type] || icons.info;
-    const color = colors[type] || colors.info;
     
     toast.innerHTML = `
-        <div class="toast-icon" style="background: ${color}">
+        <div class="toast-icon">
             <i data-lucide="${icon}" class="w-5 h-5 text-white"></i>
         </div>
         <div class="toast-content">
+            ${title ? `<h4 class="toast-title">${title}</h4>` : ''}
             <p class="toast-message">${message}</p>
         </div>
-        <button class="toast-close" onclick="closeToast(this)">
+        <button class="toast-close" onclick="closeToast(this)" aria-label="Close">
             <i data-lucide="x" class="w-4 h-4"></i>
         </button>
+        ${duration > 0 ? `<div class="toast-progress" style="animation-duration: ${duration}ms;"></div>` : ''}
     `;
     
     toastContainer.appendChild(toast);
@@ -85,7 +78,7 @@ function removeToast(toast) {
         if (toast.parentElement) {
             toast.parentElement.removeChild(toast);
         }
-    }, 300);
+    }, 350);
 }
 
 // Close toast by button
@@ -94,19 +87,24 @@ function closeToast(button) {
     removeToast(toast);
 }
 
-// Helper functions
+// Helper functions with title support
 window.toast = {
-    success: (msg, duration) => showToast(msg, 'success', duration),
-    error: (msg, duration) => showToast(msg, 'error', duration),
-    warning: (msg, duration) => showToast(msg, 'warning', duration),
-    info: (msg, duration) => showToast(msg, 'info', duration)
+    success: (message, title = 'Thành công', duration) => showToast(title, message, 'success', duration),
+    error: (message, title = 'Lỗi', duration) => showToast(title, message, 'error', duration),
+    warning: (message, title = 'Cảnh báo', duration) => showToast(title, message, 'warning', duration),
+    info: (message, title = 'Thông báo', duration) => showToast(title, message, 'info', duration),
+    // Without title
+    successNoTitle: (message, duration) => showToast('', message, 'success', duration),
+    errorNoTitle: (message, duration) => showToast('', message, 'error', duration),
+    warningNoTitle: (message, duration) => showToast('', message, 'warning', duration),
+    infoNoTitle: (message, duration) => showToast('', message, 'info', duration)
 };
 
 // Override alert for modern toast
 const originalAlert = window.alert;
 window.alert = function(message) {
     if (typeof message === 'string' && message.length > 0) {
-        showToast(message, 'info', 4000);
+        showToast('', message, 'info', 4000);
     } else {
         originalAlert(message);
     }

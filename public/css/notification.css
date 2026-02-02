@@ -1,4 +1,4 @@
-/* notification.css - Modern Toast Notification */
+/* notification.css - Ltoasteur-inspired Toast Notification */
 
 /* Toast Container */
 .toast-container {
@@ -10,105 +10,157 @@
     flex-direction: column;
     gap: 12px;
     pointer-events: none;
-    max-width: 400px;
+    max-width: 380px;
 }
 
 @media (max-width: 480px) {
     .toast-container {
         right: 16px;
         left: 16px;
+        top: 16px;
         max-width: none;
     }
 }
 
 /* Toast Item */
 .toast {
+    position: relative;
     display: flex;
-    align-items: center;
-    gap: 12px;
+    align-items: flex-start;
+    gap: 14px;
     background: white;
-    padding: 16px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.05);
+    padding: 16px 18px;
+    border-radius: 14px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12), 0 2px 6px rgba(0, 0, 0, 0.08);
     pointer-events: auto;
-    min-width: 300px;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    min-width: 320px;
+    border-left: 4px solid;
+    overflow: hidden;
 }
 
 .dark .toast {
-    background: rgba(28, 28, 30, 0.95);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(28, 28, 30, 0.98);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4), 0 2px 6px rgba(0, 0, 0, 0.3);
 }
+
+/* Border colors */
+.toast-success { border-left-color: #10b981; }
+.toast-error { border-left-color: #ef4444; }
+.toast-warning { border-left-color: #f59e0b; }
+.toast-info { border-left-color: #3b82f6; }
 
 /* Toast Icon */
 .toast-icon {
-    width: 32px;
-    height: 32px;
-    border-radius: 8px;
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
 }
 
+.toast-success .toast-icon { background: linear-gradient(135deg, #10b981, #059669); }
+.toast-error .toast-icon { background: linear-gradient(135deg, #ef4444, #dc2626); }
+.toast-warning .toast-icon { background: linear-gradient(135deg, #f59e0b, #d97706); }
+.toast-info .toast-icon { background: linear-gradient(135deg, #3b82f6, #2563eb); }
+
 /* Toast Content */
 .toast-content {
     flex: 1;
     min-width: 0;
+    padding-top: 2px;
+}
+
+.toast-title {
+    margin: 0 0 4px 0;
+    font-size: 15px;
+    font-weight: 700;
+    color: #111827;
+    line-height: 1.4;
+}
+
+.dark .toast-title {
+    color: #f9fafb;
 }
 
 .toast-message {
     margin: 0;
-    font-size: 14px;
-    font-weight: 500;
-    color: #1f2937;
+    font-size: 13px;
+    font-weight: 400;
+    color: #6b7280;
     line-height: 1.5;
 }
 
 .dark .toast-message {
-    color: #f9fafb;
+    color: #9ca3af;
 }
 
 /* Toast Close Button */
 .toast-close {
-    width: 24px;
-    height: 24px;
-    border-radius: 6px;
-    background: rgba(0, 0, 0, 0.05);
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.04);
     border: none;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    transition: all 0.2s;
-    color: #6b7280;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    color: #9ca3af;
+    opacity: 0.7;
 }
 
 .toast-close:hover {
-    background: rgba(0, 0, 0, 0.1);
-    transform: scale(1.1);
+    background: rgba(0, 0, 0, 0.08);
+    opacity: 1;
+    transform: scale(1.05);
 }
 
 .dark .toast-close {
-    background: rgba(255, 255, 255, 0.1);
-    color: #9ca3af;
+    background: rgba(255, 255, 255, 0.08);
+    color: #6b7280;
 }
 
 .dark .toast-close:hover {
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.12);
 }
+
+/* Progress Bar */
+.toast-progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    background: currentColor;
+    opacity: 0.4;
+    border-radius: 0 0 0 14px;
+    animation: toast-progress linear forwards;
+}
+
+@keyframes toast-progress {
+    from { width: 100%; }
+    to { width: 0%; }
+}
+
+.toast-success .toast-progress { color: #10b981; }
+.toast-error .toast-progress { color: #ef4444; }
+.toast-warning .toast-progress { color: #f59e0b; }
+.toast-info .toast-progress { color: #3b82f6; }
 
 /* Toast Animations */
 @keyframes toast-slide-in {
     from {
-        transform: translateX(calc(100% + 20px));
+        transform: translateX(calc(100% + 30px)) scale(0.9);
         opacity: 0;
     }
     to {
-        transform: translateX(0);
+        transform: translateX(0) scale(1);
         opacity: 1;
     }
 }
@@ -117,15 +169,21 @@
     from {
         transform: translateX(0) scale(1);
         opacity: 1;
+        max-height: 100px;
+        margin-bottom: 12px;
     }
     to {
-        transform: translateX(calc(100% + 20px)) scale(0.95);
+        transform: translateX(calc(100% + 30px)) scale(0.95);
         opacity: 0;
+        max-height: 0;
+        margin-bottom: 0;
+        padding-top: 0;
+        padding-bottom: 0;
     }
 }
 
 .toast-enter {
-    animation: toast-slide-in 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    animation: toast-slide-in 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .toast-show {
@@ -133,29 +191,24 @@
 }
 
 .toast-exit {
-    animation: toast-slide-out 0.3s cubic-bezier(0.4, 0, 1, 1);
+    animation: toast-slide-out 0.35s cubic-bezier(0.4, 0, 1, 1);
 }
 
-/* Toast Types with subtle glow */
-.toast-success {
-    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25), 0 0 0 1px rgba(16, 185, 129, 0.1);
+/* Hover effects */
+.toast:hover .toast-progress {
+    animation-play-state: paused;
 }
 
-.toast-error {
-    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.25), 0 0 0 1px rgba(239, 68, 68, 0.1);
+.toast:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.18), 0 4px 8px rgba(0, 0, 0, 0.12);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.toast-warning {
-    box-shadow: 0 4px 12px rgba(245, 158, 11, 0.25), 0 0 0 1px rgba(245, 158, 11, 0.1);
+.dark .toast:hover {
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5), 0 4px 8px rgba(0, 0, 0, 0.4);
 }
 
-.toast-info {
-    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.25), 0 0 0 1px rgba(59, 130, 246, 0.1);
-}
-
-    font-size: 16px; font-weight: 600;
-    cursor: pointer;
-}
 
 /* Dark Mode Support */
 @media (prefers-color-scheme: dark) {
