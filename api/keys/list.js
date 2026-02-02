@@ -10,6 +10,19 @@ export default async function handler(req, res) {
     return res.status(200).end();
   }
 
+  // Allow GET for testing
+  if (req.method === 'GET') {
+    return res.status(200).json({ 
+      message: 'List Keys API',
+      method: 'POST',
+      endpoint: '/api/keys/list',
+      body: {
+        telegramSecret: 'TELEGRAM_BOT_TOKEN'
+      },
+      note: 'This endpoint requires POST request with valid Telegram Bot token'
+    });
+  }
+
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
   }
