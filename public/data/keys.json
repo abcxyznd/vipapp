@@ -1,19 +1,5 @@
 [
   {
-    "id": "key_1769873224_2228",
-    "key": "T4X1-V5F8-UNXD-F2ES",
-    "createdAt": "2026-01-31T15:27:04.425Z",
-    "expiresAt": "2026-02-08T15:27:04.425Z",
-    "maxUses": null,
-    "currentUses": 7,
-    "active": true,
-    "createdBy": "auto_payment",
-    "transaction_code": "D8BBNX",
-    "package": "VIP 1 Tuần",
-    "notes": "8 days, ∞ uses",
-    "lastUsedAt": "2026-02-01T13:30:27.139Z"
-  },
-  {
     "id": "key_1769843616_198",
     "key": "05PN-ZKH7-7BEC-1VNY",
     "createdAt": "2026-01-31T07:13:36.392Z",
