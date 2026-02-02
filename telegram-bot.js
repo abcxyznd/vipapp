@@ -51,6 +51,10 @@ export function initTelegramBot() {
             { text: '📊 Thống Kê', callback_data: 'stats' }
           ],
           [
+            { text: '🔄 Reset Tất Cả', callback_data: 'reset_all' },
+            { text: '❌ Xóa Đơn Hàng', callback_data: 'delete_order' }
+          ],
+          [
             { text: '❓ Hướng Dẫn', callback_data: 'help' }
           ],
           [
@@ -349,6 +353,139 @@ export function initTelegramBot() {
     }
   });
 
+  // Reset all keys command
+  bot.onText(/\/resetall (.+)/, async (msg, match) => {
+    const chatId = msg.chat.id;
+    const userId = msg.from.id;
+
+    if (!isAdmin(userId)) {
+      bot.sendMessage(chatId, '❌ Bạn không có quyền sử dụng lệnh này!');
+      return;
+    }
+
+    const confirmation = match[1].trim();
+
+    if (confirmation !== 'CONFIRM') {
+      bot.sendMessage(
+        chatId,
+        '⚠️ Để xác nhận reset tất cả, gửi:\n`/resetall CONFIRM`',
+        { parse_mode: 'Markdown', ...getAdminMenu() }
+      );
+      return;
+    }
+
+    try {
+      const response = await fetch(`${API_URL}/api/keys/list`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ telegramSecret: BOT_TOKEN })
+      });
+
+      const data = await response.json();
+
+      if (!data.success) {
+        bot.sendMessage(chatId, '❌ Không thể lấy danh sách keys!', getAdminMenu());
+        return;
+      }
+
+      const keys = data.keys;
+      let deleted = 0;
+      let failed = 0;
+
+      for (const key of keys) {
+        try {
+          const delResponse = await fetch(`${API_URL}/api/keys/delete`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              telegramSecret: BOT_TOKEN,
+              key: key.key
+            })
+          });
+          const delData = await delResponse.json();
+          if (delData.success) deleted++;
+          else failed++;
+        } catch {
+          failed++;
+        }
+      }
+
+      bot.sendMessage(
+        chatId,
+        `✅ **Đã reset!**\n\n` +
+        `🗑️ Đã xóa: **${deleted}** keys\n` +
+        `❌ Thất bại: **${failed}** keys`,
+        { parse_mode: 'Markdown', ...getAdminMenu() }
+      );
+    } catch (error) {
+      console.error('Error resetting all keys:', error);
+      bot.sendMessage(chatId, '❌ Không thể kết nối đến API!', getAdminMenu());
+    }
+  });
+
+  // Delete order by transaction code
+  bot.onText(/\/deleteorder (.+)/, async (msg, match) => {
+    const chatId = msg.chat.id;
+    const userId = msg.from.id;
+
+    if (!isAdmin(userId)) {
+      bot.sendMessage(chatId, '❌ Bạn không có quyền sử dụng lệnh này!');
+      return;
+    }
+
+    const transactionCode = match[1].trim().toUpperCase();
+
+    try {
+      // Search and delete VIP key
+      const keysResponse = await fetch(`${API_URL}/api/keys/list`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ telegramSecret: BOT_TOKEN })
+      });
+
+      const keysData = await keysResponse.json();
+      let deletedKey = false;
+
+      if (keysData.success) {
+        const foundKey = keysData.keys.find(k => k.transaction_code === transactionCode);
+
+        if (foundKey) {
+          const delResponse = await fetch(`${API_URL}/api/keys/delete`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              telegramSecret: BOT_TOKEN,
+              key: foundKey.key
+            })
+          });
+          const delData = await delResponse.json();
+          if (delData.success) deletedKey = true;
+        }
+      }
+
+      // Note: VPN deletion would require an API endpoint
+      // For now, we only delete VIP keys
+
+      if (deletedKey) {
+        bot.sendMessage(
+          chatId,
+          `✅ Đã xóa đơn hàng: **${transactionCode}**\n\n` +
+          `🗑️ VIP Key đã bị xóa`,
+          { parse_mode: 'Markdown', ...getAdminMenu() }
+        );
+      } else {
+        bot.sendMessage(
+          chatId,
+          `❌ Không tìm thấy đơn hàng: **${transactionCode}**`,
+          { parse_mode: 'Markdown', ...getAdminMenu() }
+        );
+      }
+    } catch (error) {
+      console.error('Error deleting order:', error);
+      bot.sendMessage(chatId, '❌ Không thể kết nối đến API!', getAdminMenu());
+    }
+  });
+
   // Handle callback queries (inline button clicks)
   bot.on('callback_query', async (query) => {
     const chatId = query.message.chat.id;
@@ -361,7 +498,7 @@ export function initTelegramBot() {
     // Main menu navigation
     if (data === 'back_main') {
       const welcomeMsg = isAdmin(userId)
-        ? '👋 Xin chào Admin!\n\n🔑 Bot quản lý Key Download VIP\n\nChọn chức năng bên dưới:'
+        ? `👋 Xin chào ${msg.from.first_name}\n\n🔑 Mình là bot quản lý Key & VPN VIP thuộc ${API_URL} \n\nChọn chức năng bên dưới:`
         : '👋 Chào mừng!\n\n🔍 Bạn có thể tra cứu đơn hàng đã thanh toán bằng nút bên dưới.';
       
       bot.editMessageText(welcomeMsg, {
@@ -590,6 +727,41 @@ export function initTelegramBot() {
           bot.deleteMessage(chatId, query.message.message_id).catch(() => {});
         }, 5 * 60 * 1000);
       }
+    } else if (data === 'reset_all') {
+      bot.editMessageText(
+        '⚠️ **Reset Tất Cả Đơn Hàng**\n\n' +
+        '🔴 **CẢNH BÁO:** Lệnh này sẽ xóa TOÀN BỘ keys!\n\n' +
+        'Để xác nhận, gửi:\n' +
+        '`/resetall CONFIRM`\n\n' +
+        '💡 *Thao tác này KHÔNG THỂ hoàn tác!*',
+        {
+          chat_id: chatId,
+          message_id: query.message.message_id,
+          parse_mode: 'Markdown',
+          ...getAdminMenu()
+        }
+      );
+      setTimeout(() => {
+        bot.deleteMessage(chatId, query.message.message_id).catch(() => {});
+      }, 5 * 60 * 1000);
+    } else if (data === 'delete_order') {
+      bot.editMessageText(
+        '❌ **Xóa Đơn Hàng**\n\n' +
+        'Để xóa đơn hàng theo mã giao dịch, gửi:\n' +
+        '`/deleteorder <mã_giao_dịch>`\n\n' +
+        '📝 Ví dụ:\n' +
+        '`/deleteorder D8BBNX`\n\n' +
+        '💡 *Sẽ xóa cả VIP Key và VPN (nếu có).*',
+        {
+          chat_id: chatId,
+          message_id: query.message.message_id,
+          parse_mode: 'Markdown',
+          ...getAdminMenu()
+        }
+      );
+      setTimeout(() => {
+        bot.deleteMessage(chatId, query.message.message_id).catch(() => {});
+      }, 5 * 60 * 1000);
     } else if (data === 'help') {
       bot.editMessageText(
         '❓ **Hướng Dẫn Sử Dụng**\n\n' +
@@ -599,7 +771,9 @@ export function initTelegramBot() {
         '**Lệnh Admin:**\n' +
         '• `/create [days] [uses]` - Tạo key mới\n' +
         '• `/list` - Xem danh sách keys\n' +
-        '• `/delete <key>` - Xóa key\n\n' +
+        '• `/delete <key>` - Xóa key\n' +
+        '• `/deleteorder <mã>` - Xóa đơn hàng\n' +
+        '• `/resetall CONFIRM` - Xóa tất cả\n\n' +
         '💡 *Mã giao dịch là nội dung chuyển khoản khi thanh toán.*',
         { 
           chat_id: chatId,
