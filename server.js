@@ -109,7 +109,7 @@ function setupPageRoutes() {
     '/cert': 'pages/cert.html',
     '/conf': 'pages/conf.html',
     '/dylib': 'pages/dylib.html',
-    '/home': 'pages/home.html',
+    // '/home': 'pages/home.html',
     '/ipa': 'pages/ipa.html',
     '/signipa': 'signipa.html',
     '/proxy': 'proxy.html',
