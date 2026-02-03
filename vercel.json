@@ -1,0 +1,55 @@
+{
+  "version": 2,
+  "routes": [
+    {
+      "src": "/payment",
+      "dest": "/public/payment.html"
+    },
+    {
+      "src": "/sign",
+      "dest": "/public/signipa.html"
+    },
+    {
+      "src": "/proxy",
+      "dest": "/public/proxy.html"
+    },
+    {
+      "src": "/admin",
+      "dest": "/public/pages/admin.html"
+    },
+    {
+      "src": "/home",
+      "dest": "/public/pages/home.html"
+    },
+    {
+      "src": "/ipa",
+      "dest": "/public/pages/ipa.html"
+    },
+    {
+      "src": "/dylib",
+      "dest": "/public/pages/dylib.html"
+    },
+    {
+      "src": "/conf",
+      "dest": "/public/pages/conf.html"
+    },
+    {
+      "src": "/cert",
+      "dest": "/public/pages/cert.html"
+    },
+    {
+      "src": "/",
+      "dest": "/public/index.html"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/public/$1"
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "https://api.cheatlibrary.xyz/api/:path*"
+    }
+  ]
+}
