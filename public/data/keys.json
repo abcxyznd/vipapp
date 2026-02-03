@@ -1,14 +1,52 @@
 [
   {
-    "id": "key_1770051857349_yt07iq1u4",
-    "key": "8W78-NQH7-MYA1-7MX3",
-    "createdAt": "2026-02-02T17:04:17.349Z",
+    "id": "key_1770129940_2552",
+    "key": "6T0T-LEQG-6TKW-6SXG",
+    "createdAt": "2026-02-03T14:45:40.824Z",
+    "expiresAt": "2026-03-06T14:45:40.824Z",
+    "maxUses": null,
+    "currentUses": 0,
+    "active": true,
+    "createdBy": "auto_payment",
+    "transaction_code": "TEST999",
+    "transaction_id": "test_1770129940821",
+    "package": "VIP 1 Tháng",
+    "notes": "31 days, ∞ uses"
+  },
+  {
+    "id": "key_1770126222_2438",
+    "key": "64C8-QO6F-6URD-BG5Z",
+    "createdAt": "2026-02-03T13:43:42.993Z",
+    "expiresAt": "2026-03-06T13:43:42.993Z",
+    "maxUses": null,
+    "currentUses": 0,
+    "active": true,
+    "createdBy": "auto_payment",
+    "transaction_code": "TEST123",
+    "transaction_id": "test_1770126222989",
+    "package": "VIP 1 Tháng",
+    "notes": "31 days, ∞ uses"
+  },
+  {
+    "id": "key_1770042174511_tsjpcp7yl",
+    "key": "82UC-HCQB-XMA7-E609",
+    "createdAt": "2026-02-02T14:22:54.511Z",
     "expiresAt": null,
     "maxUses": null,
-    "currentUses": 2,
+    "currentUses": 0,
     "active": true,
     "createdBy": "telegram_bot",
-    "notes": "Created by nguyenduc666",
-    "lastUsedAt": "2026-02-02T17:11:48.869Z"
+    "notes": "∞ days, ∞ uses"
+  },
+  {
+    "id": "key_1770041105577_hmgvb09pd",
+    "key": "F3HE-KTTG-ZI3L-C7AY",
+    "createdAt": "2026-02-02T14:05:05.577Z",
+    "expiresAt": "2026-02-09T14:05:05.577Z",
+    "maxUses": 10,
+    "currentUses": 0,
+    "active": true,
+    "createdBy": "telegram_bot",
+    "notes": "Test key from PowerShell"
   }
 ]
