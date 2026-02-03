@@ -1,5 +1,149 @@
 [
   {
+    "id": "ipa-com.myfitnesspal.mfp-26.5.0",
+    "type": "ipa",
+    "name": "MyFitnessPal",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/com.myfitnesspal.mfp.png",
+    "desc": "Injected with Subscription Unlocked",
+    "tags": [
+      "health & fitness"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/04-02-2026/MyFitnessPal_26.5.0_Subscription_Unlocked_%40thisismanpreets_apptesters.org.ipa",
+    "version": "26.5.0",
+    "developer": "khomodvip",
+    "date": "2026-02-04",
+    "source": "apptesters",
+    "bundleID": "com.myfitnesspal.mfp",
+    "lastSync": "2026-02-03T21:55:19.450Z"
+  },
+  {
+    "id": "ipa-com.ahmetserdarkaradeniz.Phocus-3.1.1",
+    "type": "ipa",
+    "name": "Phocus",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/com.ahmetserdarkaradeniz.Phocus.png",
+    "desc": "Injected with Subscription Unlocked",
+    "tags": [
+      "utilities"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/04-02-2026/Phocus_3.1.1_Subscription_Unlocked_%40thisismanpreets_apptesters.org.ipa",
+    "version": "3.1.1",
+    "developer": "khomodvip",
+    "date": "2026-02-04",
+    "source": "apptesters",
+    "bundleID": "com.ahmetserdarkaradeniz.Phocus",
+    "lastSync": "2026-02-03T21:55:19.452Z"
+  },
+  {
+    "id": "ipa-com.hasankassem.mockup-4.1.2",
+    "type": "ipa",
+    "name": "Mockup",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/com.hasankassem.mockup.png",
+    "desc": "Injected with Subscription Unlocked",
+    "tags": [
+      "utilities"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/04-02-2026/Mockup_4.1.2_Subscription_Unlocked_%40thisismanpreets_apptesters.org.ipa",
+    "version": "4.1.2",
+    "developer": "khomodvip",
+    "date": "2026-02-04",
+    "source": "apptesters",
+    "bundleID": "com.hasankassem.mockup",
+    "lastSync": "2026-02-03T21:55:19.452Z"
+  },
+  {
+    "id": "ipa-com.upskew.encode.ios-6.20.0",
+    "type": "ipa",
+    "name": "Encode",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/com.upskew.encode.ios.png",
+    "desc": "Injected with Subscription Unlocked",
+    "tags": [
+      "utilities"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/04-02-2026/Encode_6.20.0_Subscription_Unlocked_%40thisismanpreets_apptesters.org.ipa",
+    "version": "6.20.0",
+    "developer": "khomodvip",
+    "date": "2026-02-04",
+    "source": "apptesters",
+    "bundleID": "com.upskew.encode.ios",
+    "lastSync": "2026-02-03T21:55:19.453Z"
+  },
+  {
+    "id": "ipa-com.adobe.premiere.ios-26.5.0",
+    "type": "ipa",
+    "name": "Premiere",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/com.adobe.premiere.ios.png",
+    "desc": "Injected with Subscription Unlocked",
+    "tags": [
+      "navigation"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/04-02-2026/Premiere_26.5.0_Subscription_Unlocked_%40thisismanpreets_apptesters.org.ipa",
+    "version": "26.5.0",
+    "developer": "khomodvip",
+    "date": "2026-02-04",
+    "source": "apptesters",
+    "bundleID": "com.adobe.premiere.ios",
+    "lastSync": "2026-02-03T21:55:19.453Z"
+  },
+  {
+    "id": "ipa-com.consumedbycode.slopes-2026.4",
+    "type": "ipa",
+    "name": "Slopes",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/com.consumedbycode.slopes.png",
+    "desc": "Injected with Subscription Unlocked",
+    "tags": [
+      "game"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/04-02-2026/Slopes_2026.4_Subscription_Unlocked_%40thisismanpreets_apptesters.org.ipa",
+    "version": "2026.4",
+    "developer": "khomodvip",
+    "date": "2026-02-04",
+    "source": "apptesters",
+    "bundleID": "com.consumedbycode.slopes",
+    "lastSync": "2026-02-03T21:55:19.453Z"
+  },
+  {
+    "id": "ipa-com.getupnote.ios-9.16.4",
+    "type": "ipa",
+    "name": "UpNote",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/com.getupnote.ios.png",
+    "desc": "Injected with Subscription Unlocked",
+    "tags": [
+      "productivity"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/04-02-2026/UpNote_9.16.4_Subscription_Unlocked_%40thisismanpreets_apptesters.org.ipa",
+    "version": "9.16.4",
+    "developer": "khomodvip",
+    "date": "2026-02-04",
+    "source": "apptesters",
+    "bundleID": "com.getupnote.ios",
+    "lastSync": "2026-02-03T21:55:19.453Z"
+  },
+  {
+    "id": "ipa-com.opentechiz.heavybagpro-2.5.3",
+    "type": "ipa",
+    "name": "HeavyBagPro",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/com.opentechiz.heavybagpro.png",
+    "desc": "Injected with Subscription Unlocked",
+    "tags": [
+      "utilities"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/03-02-2026/HeavyBagPro_2.5.3_Subscription_Unlocked_%40thisismanpreets_apptesters.org.ipa",
+    "version": "2.5.3",
+    "developer": "khomodvip",
+    "date": "2026-02-04",
+    "source": "apptesters",
+    "bundleID": "com.opentechiz.heavybagpro",
+    "lastSync": "2026-02-03T21:55:19.453Z"
+  },
+  {
     "id": "ipa-com.snowcorp.glowup-4.0.1",
     "type": "ipa",
     "name": "GlowUp",
@@ -718,6 +862,42 @@
     "source": "apptesters",
     "bundleID": "com.dehancer.film.ios-app",
     "lastSync": "2026-02-03T15:55:49.127Z"
+  },
+  {
+    "id": "ipa-com.iPwners.Plonkan-13.24",
+    "type": "ipa",
+    "name": "Buddy",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/com.iPwners.Plonkan.png",
+    "desc": "Injected with Premium",
+    "tags": [
+      "utilities"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/03-02-2026/Buddy_13.24_Premium_%40thisismanpreets_apptesters.org.ipa",
+    "version": "13.24",
+    "developer": "khomodvip",
+    "date": "2026-02-03",
+    "source": "apptesters",
+    "bundleID": "com.iPwners.Plonkan",
+    "lastSync": "2026-02-03T21:55:19.453Z"
+  },
+  {
+    "id": "ipa-com.bbauman.Scripty-2.36",
+    "type": "ipa",
+    "name": "Coconote",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/com.bbauman.Scripty.png",
+    "desc": "Injected with Pro",
+    "tags": [
+      "productivity"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/03-02-2026/Coconote_2.36_Pro_%40thisismanpreets_apptesters.org.ipa",
+    "version": "2.36",
+    "developer": "khomodvip",
+    "date": "2026-02-03",
+    "source": "apptesters",
+    "bundleID": "com.bbauman.Scripty",
+    "lastSync": "2026-02-03T21:55:19.454Z"
   },
   {
     "id": "ipa-com.moonlab.unfoldstories-8.154.0",
