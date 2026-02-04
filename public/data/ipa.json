@@ -324,6 +324,78 @@
     "lastSync": "2026-02-04T03:55:19.674Z"
   },
   {
+    "id": "ipa-co.polarr.ppe-6.12.0",
+    "type": "ipa",
+    "name": "Polarr",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/co.polarr.ppe.png",
+    "desc": "Injected with Satella",
+    "tags": [
+      "photo & video"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/04-02-2026/Polarr_6.12.0_Satella_%40thisismanpreets_apptesters.org.ipa",
+    "version": "6.12.0",
+    "developer": "khomodvip",
+    "date": "2026-02-04",
+    "source": "apptesters",
+    "bundleID": "co.polarr.ppe",
+    "lastSync": "2026-02-04T09:55:19.918Z"
+  },
+  {
+    "id": "ipa-com.khanov.BlockerX-6.4.2",
+    "type": "ipa",
+    "name": "1Blocker",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/com.khanov.BlockerX.png",
+    "desc": "Injected with Subscription Unlocked",
+    "tags": [
+      "utilities"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/04-02-2026/1Blocker_6.4.2_Subscription_Unlocked_%40thisismanpreets_apptesters.org.ipa",
+    "version": "6.4.2",
+    "developer": "khomodvip",
+    "date": "2026-02-04",
+    "source": "apptesters",
+    "bundleID": "com.khanov.BlockerX",
+    "lastSync": "2026-02-04T09:55:19.921Z"
+  },
+  {
+    "id": "ipa-com.yazio.ios.YAZIO-12.70.1",
+    "type": "ipa",
+    "name": "Yazio",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/com.yazio.ios.YAZIO.png",
+    "desc": "Injected with Subscription Unlocked",
+    "tags": [
+      "utilities"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/04-02-2026/Yazio_12.70.1_Subscription_Unlocked_%40thisismanpreets_apptesters.org.ipa",
+    "version": "12.70.1",
+    "developer": "khomodvip",
+    "date": "2026-02-04",
+    "source": "apptesters",
+    "bundleID": "com.yazio.ios.YAZIO",
+    "lastSync": "2026-02-04T09:55:19.921Z"
+  },
+  {
+    "id": "ipa-eu.gowod-5.5.4",
+    "type": "ipa",
+    "name": "GOWOD",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/eu.gowod.png",
+    "desc": "Injected with Subscription Unlocked",
+    "tags": [
+      "utilities"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/04-02-2026/GOWOD_5.5.4_Subscription_Unlocked_%40thisismanpreets_apptesters.org.ipa",
+    "version": "5.5.4",
+    "developer": "khomodvip",
+    "date": "2026-02-04",
+    "source": "apptesters",
+    "bundleID": "eu.gowod",
+    "lastSync": "2026-02-04T09:55:19.922Z"
+  },
+  {
     "id": "ipa-com.snowcorp.glowup-4.0.1",
     "type": "ipa",
     "name": "GlowUp",
