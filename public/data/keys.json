@@ -33,10 +33,11 @@
     "createdAt": "2026-02-02T14:22:54.511Z",
     "expiresAt": null,
     "maxUses": null,
-    "currentUses": 0,
+    "currentUses": 1,
     "active": true,
     "createdBy": "telegram_bot",
-    "notes": "∞ days, ∞ uses"
+    "notes": "∞ days, ∞ uses",
+    "lastUsedAt": "2026-02-04T14:24:21.434Z"
   },
   {
     "id": "key_1770041105577_hmgvb09pd",
