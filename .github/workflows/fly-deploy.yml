@@ -1,11 +1,10 @@
 name: Fly.io Auto Deploy
 
 on:
-  # Auto deploy disabled - uncomment to re-enable
-  # push:
-  #   branches:
-  #     - main
-  #     - master
+  push:
+    branches:
+      - main
+      - master
   workflow_dispatch:
 
 jobs:
