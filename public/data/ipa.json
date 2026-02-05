@@ -306,6 +306,42 @@
     "lastSync": "2026-02-05T13:58:25.274Z"
   },
   {
+    "id": "ipa-net.mkswap.Dropshare-iOS-3.59",
+    "type": "ipa",
+    "name": "Dropshare",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/net.mkswap.Dropshare-iOS.png",
+    "desc": "Injected with Subscription Unlocked",
+    "tags": [
+      "utilities"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/05-02-2026/Dropshare_3.59_Subscription_Unlocked_%40thisismanpreets_apptesters.org.ipa",
+    "version": "3.59",
+    "developer": "cheatlibrary",
+    "date": "2026-02-05",
+    "source": "apptesters",
+    "bundleID": "net.mkswap.Dropshare-iOS",
+    "lastSync": "2026-02-05T15:22:48.536Z"
+  },
+  {
+    "id": "ipa-com.aoklab.fewerphotos-3.2.44",
+    "type": "ipa",
+    "name": "swipewipe",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/com.aoklab.fewerphotos.png",
+    "desc": "Injected with Pro",
+    "tags": [
+      "photo & video"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/05-02-2026/swipewipe_3.2.44_Pro_%40thisismanpreets_apptesters.org.ipa",
+    "version": "3.2.44",
+    "developer": "cheatlibrary",
+    "date": "2026-02-05",
+    "source": "apptesters",
+    "bundleID": "com.aoklab.fewerphotos",
+    "lastSync": "2026-02-05T15:22:48.536Z"
+  },
+  {
     "id": "ipa-com.myfitnesspal.mfp-26.5.0",
     "type": "ipa",
     "name": "MyFitnessPal",
