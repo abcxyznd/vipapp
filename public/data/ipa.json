@@ -162,6 +162,132 @@
     "lastSync": "2026-02-05T09:55:21.257Z"
   },
   {
+    "id": "ipa-com.mwm.guitartuner-4.00.01",
+    "type": "ipa",
+    "name": "TunerPro",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/com.mwm.guitartuner.png",
+    "desc": "Injected with Pro",
+    "tags": [
+      "utilities"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/05-02-2026/TunerPro_4.00.01_Pro_%40thisismanpreets_apptesters.org.ipa",
+    "version": "4.00.01",
+    "developer": "cheatlibrary",
+    "date": "2026-02-05",
+    "source": "apptesters",
+    "bundleID": "com.mwm.guitartuner",
+    "lastSync": "2026-02-05T13:54:05.416Z"
+  },
+  {
+    "id": "ipa-se.resenatverket.FlightRadar24-Free-11.0.0",
+    "type": "ipa",
+    "name": "Flightradar24",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/se.resenatverket.FlightRadar24-Free.png",
+    "desc": "Injected with Gold",
+    "tags": [
+      "navigation"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/05-02-2026/Flightradar24_11.0.0_Gold_%40thisismanpreets_apptesters.org.ipa",
+    "version": "11.0.0",
+    "developer": "cheatlibrary",
+    "date": "2026-02-05",
+    "source": "apptesters",
+    "bundleID": "se.resenatverket.FlightRadar24-Free",
+    "lastSync": "2026-02-05T13:54:05.417Z"
+  },
+  {
+    "id": "ipa-com.readdle.ReaddleDocsIPad-8.19.3",
+    "type": "ipa",
+    "name": "Documents",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/com.readdle.ReaddleDocsIPad.png",
+    "desc": "Injected with Plus",
+    "tags": [
+      "productivity"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/05-02-2026/Documents_8.19.3_Plus_%40thisismanpreets_apptesters.org.ipa",
+    "version": "8.19.3",
+    "developer": "cheatlibrary",
+    "date": "2026-02-05",
+    "source": "apptesters",
+    "bundleID": "com.readdle.ReaddleDocsIPad",
+    "lastSync": "2026-02-05T13:54:05.419Z"
+  },
+  {
+    "id": "ipa-com.future.kapi-3.37.0",
+    "type": "ipa",
+    "name": "Action",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/com.future.kapi.png",
+    "desc": "Injected with Subscription Unlocked",
+    "tags": [
+      "game"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/05-02-2026/Action_3.37.0_Subscription_Unlocked_%40thisismanpreets_apptesters.org.ipa",
+    "version": "3.37.0",
+    "developer": "cheatlibrary",
+    "date": "2026-02-05",
+    "source": "apptesters",
+    "bundleID": "com.future.kapi",
+    "lastSync": "2026-02-05T13:54:05.419Z"
+  },
+  {
+    "id": "ipa-com.lightricks.Facetune2-3.117.1",
+    "type": "ipa",
+    "name": "Facetune",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/com.lightricks.Facetune2.png",
+    "desc": "Injected with Subscription Unlocked",
+    "tags": [
+      "photo & video"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/05-02-2026/Facetune_3.117.1_Subscription_Unlocked_%40thisismanpreets_apptesters.org.ipa",
+    "version": "3.117.1",
+    "developer": "cheatlibrary",
+    "date": "2026-02-05",
+    "source": "apptesters",
+    "bundleID": "com.lightricks.Facetune2",
+    "lastSync": "2026-02-05T13:54:05.420Z"
+  },
+  {
+    "id": "ipa-com.readdle.Scanner-8.33.4",
+    "type": "ipa",
+    "name": "ScannerPro",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/com.readdle.Scanner.png",
+    "desc": "Injected with Pro",
+    "tags": [
+      "utilities"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/05-02-2026/ScannerPro_8.33.4_Pro_%40thisismanpreets_apptesters.org.ipa",
+    "version": "8.33.4",
+    "developer": "cheatlibrary",
+    "date": "2026-02-05",
+    "source": "apptesters",
+    "bundleID": "com.readdle.Scanner",
+    "lastSync": "2026-02-05T13:54:05.420Z"
+  },
+  {
+    "id": "ipa-com.frameoneapps.Crsel-1.3.4",
+    "type": "ipa",
+    "name": "Crsel",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/com.frameoneapps.Crsel.png",
+    "desc": "Injected with Pro",
+    "tags": [
+      "utilities"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/05-02-2026/Crsel_1.3.4_Pro_%40thisismanpreets_apptesters.org.ipa",
+    "version": "1.3.4",
+    "developer": "cheatlibrary",
+    "date": "2026-02-05",
+    "source": "apptesters",
+    "bundleID": "com.frameoneapps.Crsel",
+    "lastSync": "2026-02-05T13:54:05.420Z"
+  },
+  {
     "id": "ipa-com.myfitnesspal.mfp-26.5.0",
     "type": "ipa",
     "name": "MyFitnessPal",
