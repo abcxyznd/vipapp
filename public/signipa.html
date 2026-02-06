@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>VIP SIGNER - CHEATLIBRARY.XYZ</title>
+    <title>VIP SIGNER - CHEATLIBRARY</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
@@ -88,7 +88,7 @@
                 SIGN <span class="text-brand">APP</span>
             </h1>
             <p class="text-gray-500 dark:text-gray-400 text-[10px] font-bold tracking-widest mt-0.5 uppercase">
-                Powered by tuiducios.xyz
+                Powered by Cuios.shop
             </p>
         </div>
 
@@ -120,7 +120,7 @@
                     </div>
 
                     <div onclick="selectApp('gbox', this)" class="app-card relative p-2.5 rounded-2xl cursor-pointer bg-gray-50 dark:bg-white/5 flex items-center gap-3 group hover:bg-gray-100 dark:hover:bg-white/10">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKtwWoaqu429iKe5-uF0GobehE_TF7utyKqg&s" class="app-icon-img bg-white dark:bg-gray-800">
+                        <img src="https://gbox.run/Public/resources/icon256.png" class="app-icon-img bg-white dark:bg-gray-800">
                         <div class="flex-1 min-w-0">
                             <div class="font-bold text-sm leading-tight text-gray-900 dark:text-white">GBox</div>
                             <div class="text-[10px] text-gray-500 dark:text-gray-400 font-medium">Ổn định</div>
@@ -194,6 +194,10 @@
 
             <div id="errorState" class="hidden bg-red-50 dark:bg-red-900/10 border border-red-200 dark:border-red-800/30 p-3 rounded-xl text-center">
                 <div class="text-red-500 dark:text-red-400 font-bold text-xs" id="errorMsg">Lỗi không xác định</div>
+                
+                <button id="serverErrorVideoBtn" onclick="openVideo('ScVYtBvEhq0')" class="hidden mt-3 w-full bg-red-100 hover:bg-red-200 dark:bg-red-800/40 dark:hover:bg-red-800/60 text-red-600 dark:text-red-300 font-bold py-2 rounded-lg text-xs transition flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-circle-play"></i> Server lỗi - hãy ký tạm Esign như video này <br><br> lưu ý: file cc tải từ web và giải nén ra tương tự video và pass có trong file giải nén không phải pass trong video
+                </button>
             </div>
         </div>
 
@@ -302,6 +306,7 @@
             const btn = document.getElementById('signBtn');
             const statusArea = document.getElementById('statusArea');
             const errorMsg = document.getElementById('errorMsg');
+            const errorVideoBtn = document.getElementById('serverErrorVideoBtn');
 
             if (!fileInput.files[0]) return alert("Vui lòng chọn file Zip chứng chỉ!");
 
@@ -310,11 +315,14 @@
             btn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> ĐANG XỬ LÝ...';
             btn.classList.add('opacity-70', 'cursor-not-allowed');
             
+            // Reset tất cả trạng thái về mặc định
             statusArea.classList.remove('hidden');
             document.getElementById('loadingState').classList.remove('hidden');
             document.getElementById('successState').classList.add('hidden');
             document.getElementById('errorState').classList.add('hidden');
             document.getElementById('passwordArea').classList.add('hidden');
+            errorVideoBtn.classList.add('hidden'); // Luôn ẩn nút video khi bắt đầu ký lại
+
             statusArea.scrollIntoView({ behavior: 'smooth', block: 'end' });
 
             const formData = new FormData();
@@ -341,15 +349,20 @@
                     errorMsg.innerHTML = `<i class="fa-solid fa-key mr-1"></i> ${data.message}`;
                     document.getElementById('passwordArea').classList.remove('hidden');
                     passwordInput.focus();
+                    // Lưu ý: Không hiện nút video ở đây vì đây là lỗi thiếu mật khẩu
                 } else {
                     document.getElementById('errorState').classList.remove('hidden');
                     errorMsg.innerText = data.message;
                 }
 
             } catch (e) {
+                // ĐÂY LÀ CHỖ XỬ LÝ LỖI KẾT NỐI SERVER
                 document.getElementById('loadingState').classList.add('hidden');
                 document.getElementById('errorState').classList.remove('hidden');
                 errorMsg.innerText = "Lỗi kết nối Server! Vui lòng thử lại.";
+                
+                // HIỂN THỊ NÚT VIDEO KHI GẶP LỖI NÀY
+                errorVideoBtn.classList.remove('hidden');
             } finally {
                 btn.disabled = false;
                 btn.innerHTML = '<i class="fa-solid fa-signature"></i> KÝ CHỨNG CHỈ NGAY';
