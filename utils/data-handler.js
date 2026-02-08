@@ -1,4 +1,4 @@
-// utils/data-handler.js - Unified data handling for Vercel & Fly.io
+z
 import fs from 'fs/promises';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -90,7 +90,7 @@ export async function writeData(relativePath, data) {
  */
 async function readFromGitHub(relativePath) {
   const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
-  const GITHUB_OWNER = process.env.GITHUB_OWNER || 'abcxyznd';
+  const GITHUB_OWNER = process.env.GITHUB_OWNER || 'nddev15';
   const GITHUB_REPO = process.env.GITHUB_REPO || 'vipapp';
   
   if (!GITHUB_TOKEN) {
@@ -128,7 +128,7 @@ async function readFromGitHub(relativePath) {
  */
 async function writeToGitHub(relativePath, data) {
   const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
-  const GITHUB_OWNER = process.env.GITHUB_OWNER || 'abcxyznd';
+  const GITHUB_OWNER = process.env.GITHUB_OWNER || 'nddev15';
   const GITHUB_REPO = process.env.GITHUB_REPO || 'vipapp';
   
   if (!GITHUB_TOKEN) {

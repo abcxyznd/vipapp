@@ -39,7 +39,7 @@ export default async function handler(req, res) {
 
     // 🔒 CONFIGURATION: Sử dụng Environment Variables
     const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
-    const GITHUB_OWNER = process.env.GITHUB_OWNER || 'abcxyznd';
+    const GITHUB_OWNER = process.env.GITHUB_OWNER || 'nddev15';
     const GITHUB_REPO = process.env.GITHUB_REPO || 'vipapp';
     const APPTESTER_URL = process.env.APPTESTER_URL;
     const FILE_PATH = 'public/data/ipa.json'; // Đường dẫn file

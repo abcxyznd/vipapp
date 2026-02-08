@@ -14,7 +14,7 @@ export default async function handler(req, res) {
     // const SEPAY_API_TOKEN = process.env.SEPAY_API_TOKEN;
     const API_BANK = process.env.API_BANK;
     const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
-    const GITHUB_OWNER = process.env.GITHUB_OWNER || 'abcxyznd'; 
+    const GITHUB_OWNER = process.env.GITHUB_OWNER || 'nddev15'; 
     const GITHUB_REPO = process.env.GITHUB_REPO || 'vipapp';
     const FILE_PATH = 'public/data/keys.json';
 

@@ -19,7 +19,7 @@ export default async function handler(req, res) {
 
     // 2. CONFIG
     const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
-    const GITHUB_OWNER = process.env.GITHUB_OWNER || 'abcxyznd';
+    const GITHUB_OWNER = process.env.GITHUB_OWNER || 'nddev15';
     const GITHUB_REPO = process.env.GITHUB_REPO || 'vipapp';
 
     if (!GITHUB_TOKEN) return res.status(500).json({ error: 'Thiếu GITHUB_TOKEN' });

@@ -5,7 +5,7 @@ import { readData, writeData } from '../utils/data-handler.js';
 const API_BANK = process.env.API_BANK;
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN; 
 // const SEPAY_API_TOKEN = process.env.SEPAY_API_TOKEN; 
-const REPO_OWNER = "abcxyznd";
+const REPO_OWNER = "nddev15";
 const REPO_NAME = "vipapp";
 const DATA_PATH = "public/data/vpn_data.json";
 
