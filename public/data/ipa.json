@@ -1,5 +1,59 @@
 [
   {
+    "id": "ipa-com.andyworks.calculator-3.21",
+    "type": "ipa",
+    "name": "andyworkscalculator",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/com.andyworks.calculator.png",
+    "desc": "Injected with Subscription Unlocked",
+    "tags": [
+      "productivity"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/14-02-2026/andyworkscalculator_3.21_Subscription_Unlocked_%40thisismanpreets_apptesters.org.ipa",
+    "version": "3.21",
+    "developer": "cheatlibrary",
+    "date": "2026-02-14",
+    "source": "apptesters",
+    "bundleID": "com.andyworks.calculator",
+    "lastSync": "2026-02-13T21:15:08.230Z"
+  },
+  {
+    "id": "ipa-com.andyworks.timer-3.19",
+    "type": "ipa",
+    "name": "simpletimer",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/com.andyworks.timer.png",
+    "desc": "Injected with Subscription Unlocked",
+    "tags": [
+      "productivity"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/14-02-2026/simpletimer_3.19_Subscription_Unlocked_%40thisismanpreets_apptesters.org.ipa",
+    "version": "3.19",
+    "developer": "cheatlibrary",
+    "date": "2026-02-14",
+    "source": "apptesters",
+    "bundleID": "com.andyworks.timer",
+    "lastSync": "2026-02-13T21:15:08.231Z"
+  },
+  {
+    "id": "ipa-com.andyworks.vibes-1.23",
+    "type": "ipa",
+    "name": "Vibes",
+    "icon": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/com.andyworks.vibes.png",
+    "desc": "Injected with Subscription Unlocked",
+    "tags": [
+      "shopping"
+    ],
+    "badge": "new",
+    "fileLink": "https://github.com/apptesters-org/AppTesters_Repo/releases/download/14-02-2026/Vibes_1.23_Subscription_Unlocked_%40thisismanpreets_apptesters.org.ipa",
+    "version": "1.23",
+    "developer": "cheatlibrary",
+    "date": "2026-02-14",
+    "source": "apptesters",
+    "bundleID": "com.andyworks.vibes",
+    "lastSync": "2026-02-13T21:15:08.233Z"
+  },
+  {
     "id": "ipa-com.AppChief.ArabicArt-9.5.3",
     "type": "ipa",
     "name": "",
@@ -15,7 +69,7 @@
     "date": "2026-02-14",
     "source": "apptesters",
     "bundleID": "com.AppChief.ArabicArt",
-    "lastSync": "2026-02-13T21:14:00.532Z"
+    "lastSync": "2026-02-13T21:15:08.234Z"
   },
   {
     "id": "ipa-com.offlinemusic-3.8.2",
@@ -33,7 +87,7 @@
     "date": "2026-02-14",
     "source": "apptesters",
     "bundleID": "com.offlinemusic",
-    "lastSync": "2026-02-13T21:14:00.533Z"
+    "lastSync": "2026-02-13T21:15:08.236Z"
   },
   {
     "id": "ipa-com.abishkking.maleworkout-1.46.0",
@@ -51,7 +105,7 @@
     "date": "2026-02-14",
     "source": "apptesters",
     "bundleID": "com.abishkking.maleworkout",
-    "lastSync": "2026-02-13T21:14:00.536Z"
+    "lastSync": "2026-02-13T21:15:08.236Z"
   },
   {
     "id": "ipa-com.outerspaceapps.itranslate-17.4.70",
@@ -69,7 +123,7 @@
     "date": "2026-02-14",
     "source": "apptesters",
     "bundleID": "com.outerspaceapps.itranslate",
-    "lastSync": "2026-02-13T21:14:00.536Z"
+    "lastSync": "2026-02-13T21:15:08.236Z"
   },
   {
     "id": "ipa-com.risesci.nyx-0.1.568",
@@ -87,7 +141,7 @@
     "date": "2026-02-14",
     "source": "apptesters",
     "bundleID": "com.risesci.nyx",
-    "lastSync": "2026-02-13T21:14:00.536Z"
+    "lastSync": "2026-02-13T21:15:08.237Z"
   },
   {
     "id": "ipa-app.tripsy.ios-3.7.7",
@@ -1149,7 +1203,7 @@
     "date": "2026-02-13",
     "source": "apptesters",
     "bundleID": "com.spotify.client",
-    "lastSync": "2026-02-13T21:14:00.536Z"
+    "lastSync": "2026-02-13T21:15:08.237Z"
   },
   {
     "id": "ipa-com.iqraapp.Iqra-5.74.0",
